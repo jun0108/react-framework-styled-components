@@ -11,13 +11,9 @@ interface TodoItemProps {
 
 const TodoItems = styled.li`
   ${space({x:'8px'})};
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: var(--form-height-md);
-  padding: 0 10px;
-  border: 1px solid var(--color-gray-500);
-  border-radius: var(--radius-md);
+  &.chip__full--gray-md {
+    text-decoration: line-through;
+  }
 `
 
 const ItemTitle = styled.p`
@@ -29,7 +25,7 @@ const ItemTitle = styled.p`
 
 const TodoItem = ({ id, text, selected, onDelete, isSelected }: TodoItemProps) => {
 	return (
-		<TodoItems>
+		<TodoItems className={selected ? "chip__full--gray-md" : "chip__line--primary-md"}>
 			<ItemTitle>{text}</ItemTitle>
 			<CmCheckbox type='checkbox' checked={selected}
 				onChange={() => isSelected(id)}

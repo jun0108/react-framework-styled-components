@@ -20,6 +20,9 @@ const TodoListHeader = styled.div`
 		margin-right: 8px;
 	}
 `
+const TodoListContent = styled.ul`
+  ${space({y:'8px'})};
+`
 
 const Todo = () => {
 	const [todoList, setTodoList] = useState<Todo[]>([])
@@ -57,7 +60,7 @@ const Todo = () => {
 					Add
 				</button>
 			</TodoListHeader>
-			<ul>
+			<TodoListContent>
 				{todoList.length ? (
 					todoList.map((todo) => (
 						<TodoItem key={todo.id} id={todo.id} selected={todo.selected} text={todo.text} isSelected={toggleChecked} onDelete={handleDeleteTodo} />
@@ -66,7 +69,7 @@ const Todo = () => {
 					<li>등록된 할일이 없습니다.</li>
 				)
 				}
-			</ul>
+			</TodoListContent>
 		</TodoList>
 	)
 }
