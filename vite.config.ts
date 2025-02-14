@@ -21,16 +21,9 @@ export default defineConfig({
 			dirs: [
 				'src/components/**',
 				'src/styles/helpers/mixins/**',
+				'src/styles/layout/**',
 				'src/styles/components/**',
 			]
 		}),
 	],
-	css: {
-		preprocessorOptions: {
-			scss: {
-				api: 'modern',
-				additionalData: '@use "~/styles/helpers/_variables.scss" as *;',
-			},
-		},
-	},
 })

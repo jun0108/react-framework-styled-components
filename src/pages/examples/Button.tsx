@@ -1,15 +1,19 @@
+import styled from "styled-components"
+
+const ExampleItem = styled.div`
+  ${space({x:'8px'})};
+  display: flex;
+  align-items: center;
+`
+
 function Button() {
 	return (
 		<div className="">
-			<h1 className="page__title">
-				Action Button
-			</h1>
+			<PageTitle>Action Button</PageTitle>
 			<div className="p-3 mb-5 space-y-5">
 				<div>
-					<h2 className="page__subtitle">
-						Primary Solid
-					</h2>
-					<div className="flex gap-3 w-full">
+					<PageSubTitle>Primary Solid</PageSubTitle>
+					<ExampleItem>
 						<button type="button" className="btn__full--primary-sm">
 							sm
 						</button>
@@ -25,13 +29,11 @@ function Button() {
 						<button type="button" className="btn__full--primary-xl">
 							xl
 						</button>
-					</div>
+					</ExampleItem>
 				</div>
 				<div>
-					<h2 className="page__subtitle">
-						Secondary Solid
-					</h2>
-					<div className="flex gap-3 w-full">
+					<PageSubTitle>Secondary Solid</PageSubTitle>
+					<ExampleItem>
 						<button type="button" className="btn__full--secondary-sm">
 							sm
 						</button>
@@ -47,13 +49,11 @@ function Button() {
 						<button type="button" className="btn__full--secondary-xl">
 							xl
 						</button>
-					</div>
+					</ExampleItem>
 				</div>
 				<div>
-					<h2 className="page__subtitle">
-						Primary Line
-					</h2>
-					<div className="flex gap-3 w-full">
+					<PageSubTitle>Primary Line</PageSubTitle>
+					<ExampleItem>
 						<button type="button" className="btn__line--primary-sm">
 							sm
 						</button>
@@ -69,13 +69,11 @@ function Button() {
 						<button type="button" className="btn__line--primary-xl">
 							xl
 						</button>
-					</div>
+					</ExampleItem>
 				</div>
 				<div>
-					<h2 className="page__subtitle">
-						Secondary Line
-					</h2>
-					<div className="flex gap-3 w-full">
+					<PageSubTitle>Secondary Line</PageSubTitle>
+					<ExampleItem>
 						<button type="button" className="btn__line--secondary-sm">
 							sm
 						</button>
@@ -91,7 +89,7 @@ function Button() {
 						<button type="button" className="btn__line--secondary-xl">
 							xl
 						</button>
-					</div>
+					</ExampleItem>
 				</div>
 			</div>
 		</div>

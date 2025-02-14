@@ -1,7 +1,7 @@
 import { css } from "styled-components";
 
 export const typo = ({
-	fontFamily = "var(--font-noto)",
+	fontFamily,
 	lineHeight,
 	size = "var(--font-size-16)",
 	weight = 400,
@@ -14,7 +14,7 @@ export const typo = ({
     color?: string;
   }) => css`
     font-family: ${fontFamily};
-    ${lineHeight ? `line-height: ${lineHeight};` : "1.5"}
+    ${lineHeight ? `line-height: ${lineHeight};` : "1.5"};
     font-size: ${size};
     font-weight: ${weight};
     color: ${color};

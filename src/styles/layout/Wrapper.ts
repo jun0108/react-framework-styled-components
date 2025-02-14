@@ -9,7 +9,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-  ${typo({})}
+  ${typo({ fontFamily: 'var(--font-noto)'})}
   overflow-x: hidden;
   overflow-y: overlay;
   overflow-wrap: break-word;

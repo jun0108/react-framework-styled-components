@@ -18,7 +18,7 @@ export const CmCheckbox = styled.input`
     background-color: var(--color-primary-800);
     border-color: var(--color-primary-800);
     &::after {
-    ${icon({name:'check__line--fff'})};
+      ${icon({name:'check__line--fff'})};
       content: '';
       width: 12px;
       height: 12px;
