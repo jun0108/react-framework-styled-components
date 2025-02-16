@@ -13,7 +13,7 @@ export const typo = ({
     weight?: number;
     color?: string;
   }) => css`
-    font-family: ${fontFamily};
+    ${fontFamily ? `font-family: ${fontFamily};` : ""};
     ${lineHeight ? `line-height: ${lineHeight};` : "1.5"};
     font-size: ${size};
     font-weight: ${weight};
