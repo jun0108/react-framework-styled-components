@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
-import { CmInput } from "~/styles/components/Textfield";
 import TodoItem from './TodoItem'
+import CmInput from '~/components/CmInput';
 
 interface Todo {
   id: number;
@@ -14,9 +14,9 @@ const TodoList = styled.div`
 `
 const TodoListHeader = styled.div`
 	display: flex;
+	align-items: center;;
 	margin-bottom: 10px;
 	input {
-		flex: 1 1 0%;
 		margin-right: 8px;
 	}
 `
