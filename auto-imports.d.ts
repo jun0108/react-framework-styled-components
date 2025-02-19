@@ -9,8 +9,9 @@ declare global {
   const Buttons: typeof import('./src/styles/components/Buttons')['Buttons']
   const Chips: typeof import('./src/styles/components/Chips')['Chips']
   const CmCheckbox: typeof import('./src/styles/components/Selector')['CmCheckbox']
-  const CmInput: typeof import('./src/styles/components/Textfield')['CmInput']
+  const CmInput: typeof import('./src/components/CmInput')['default']
   const CmRadio: typeof import('./src/styles/components/Selector')['CmRadio']
+  const CmTextarea: typeof import('./src/components/CmTextarea')['default']
   const Header: typeof import('./src/styles/layout/Header')['Header']
   const HeaderItem: typeof import('./src/styles/layout/Header')['HeaderItem']
   const HeaderList: typeof import('./src/styles/layout/Header')['HeaderList']
@@ -20,6 +21,11 @@ declare global {
   const LayoutContent: typeof import('./src/styles/layout/Wrapper')['LayoutContent']
   const PageSubTitle: typeof import('./src/styles/layout/Wrapper')['PageSubTitle']
   const PageTitle: typeof import('./src/styles/layout/Wrapper')['PageTitle']
+  const TextfieldInput: typeof import('./src/styles/components/Textfield')['TextfieldInput']
+  const TextfieldLabel: typeof import('./src/styles/components/Textfield')['TextfieldLabel']
+  const TextfieldMessage: typeof import('./src/styles/components/Textfield')['TextfieldMessage']
+  const TextfieldTextarea: typeof import('./src/styles/components/Textfield')['TextfieldTextarea']
+  const TextfieldWrapper: typeof import('./src/styles/components/Textfield')['TextfieldWrapper']
   const Wrapper: typeof import('./src/styles/layout/Wrapper')['Wrapper']
   const autoPrefix: typeof import('./src/styles/helpers/mixins/Prefix')['autoPrefix']
   const createRef: typeof import('react')['createRef']
@@ -61,6 +67,12 @@ declare global {
 }
 // for type re-export
 declare global {
+  // @ts-ignore
+  export type { IInput } from './src/components/CmInput'
+  import('./src/components/CmInput')
+  // @ts-ignore
+  export type { ITextarea } from './src/components/CmTextarea'
+  import('./src/components/CmTextarea')
   // @ts-ignore
   export type { IIcon } from './src/components/Icon'
   import('./src/components/Icon')
