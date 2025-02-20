@@ -59,7 +59,7 @@ export const TextfieldTextarea = styled.textarea<{ $isValid: boolean, $resize: "
   display: flex;
   min-width: 250px;
   min-height: 150px;
-  padding: 4px 8px;
+  padding: 8px;
   background: var(--color-gray-100);
   border: 1px solid ;
   border-color: ${({ $isValid }) => ($isValid ? "var(--color-red-900)" : "var(--color-gray-500)")};
