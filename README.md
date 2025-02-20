@@ -7,8 +7,8 @@
 ### Ccomponents List
 
 - [ ] Button
-- [ ] Input
-- [ ] Textarea
+- [x] Input
+- [x] Textarea
 - [ ] Dropdown
 - [ ] Modal Popup
 - [ ] Alert/Confirm Popup
