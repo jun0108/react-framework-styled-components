@@ -10,7 +10,7 @@
 - [x] Input
 - [x] Textarea
 - [ ] Dropdown
-- [ ] Modal Popup
+- [x] Modal Popup
 - [ ] Alert/Confirm Popup
 - [ ] Toast Popup
 - [ ] Tooltip
