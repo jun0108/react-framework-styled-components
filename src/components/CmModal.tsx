@@ -1,5 +1,5 @@
 import React from "react";
-import { PopupOverlay, ModalContainer, ModalHeader, ModalTitle, CloseButton, ModalContent, ModalFooter } from "~/styles/components/Popups";
+import { PopupOverlay, ModalContainer, PopupHeader, PopupTitle, CloseButton, PopupContent, PopupFooter } from "~/styles/components/Popups";
 
 interface ModalProps {
   isOpen: boolean;
@@ -25,17 +25,14 @@ function CmModal({
   return (
     <PopupOverlay>
       <ModalContainer>
-        {/* Header */}
         {useHeader && (
-          <ModalHeader>
-            {popupTitle && <ModalTitle>{popupTitle}</ModalTitle>}
+          <PopupHeader>
+            {popupTitle && <PopupTitle>{popupTitle}</PopupTitle>}
             <CloseButton onClick={onClose}>×</CloseButton>
-          </ModalHeader>
+          </PopupHeader>
         )}
-        {/* Content */}
-        <ModalContent>{children}</ModalContent>
-        {/* Footer */}
-        {useFooter && <ModalFooter>{popupFooter}</ModalFooter>}
+        <PopupContent>{children}</PopupContent>
+        {useFooter && <PopupFooter>{popupFooter}</PopupFooter>}
       </ModalContainer>
     </PopupOverlay>
   );

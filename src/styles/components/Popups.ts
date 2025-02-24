@@ -1,6 +1,4 @@
-import { css } from "styled-components";
 import styled from "styled-components";
-
 /* ========================== Variables ========================== */
 
 /* ========================== Mixins ========================== */
@@ -20,17 +18,7 @@ export const PopupOverlay = styled.div`
   transition: var(--transition);
 `;
 
-export const ModalContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 600px;
-  padding: 20px;
-  background: white;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-`;
-
-export const ModalHeader = styled.div`
+export const PopupHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,7 +26,41 @@ export const ModalHeader = styled.div`
   border-bottom: 1px solid var(--color-gray-300);
 `;
 
-export const ModalTitle = styled.h2`
+export const PopupContent = styled.div`
+  ${typo({})};
+  overflow-y: auto;
+  max-height: 600px;
+  padding: 12px 0;
+`;
+
+export const PopupFooter = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 12px;
+  button + button {
+    margin-left: 8px;
+  }
+`;
+
+export const ModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  padding: 12px 20px;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+`;
+
+export const ConfirmContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 12px 20px;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+`;
+
+export const PopupTitle = styled.h2`
   ${typo({ size: "var(--font-size-18)", weight: 600, color: "var(--color-gray-900)"})};
 `;
 
@@ -46,19 +68,3 @@ export const CloseButton = styled.button`
   ${typo({ size: "var(--font-size-20)", weight: 600, color: "var(--color-gray-900)"})};
 `;
 
-export const ModalContent = styled.div`
-  ${typo({})};
-  overflow-y: auto;
-  max-height: 600px;
-  padding: 16px 0;
-`;
-
-export const ModalFooter = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 12px;
-  border-top: 1px solid var(--color-gray-300);
-  button + button {
-    margin-left: 8px;
-  }
-`;

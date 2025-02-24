@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styled from "styled-components"
+import CmConfirm from '~/components/CmConfirm';
 import CmModal from '~/components/CmModal';
 
 const ExampleItem = styled.div`
@@ -9,7 +10,23 @@ const ExampleItem = styled.div`
 `
 
 function Popups() {
-	const [isOpen, setIsOpen] = useState(false);
+	const [modalOpen, setModalOpen] = useState(false);
+
+	async function openConfirm() {
+		const isConfirmed = await CmConfirm.open({
+			popupTitle: "삭제 확인",
+			content: "정말 삭제하시겠습니까?",
+			confirmText: "삭제",
+			cancelText: "취소",
+		});
+	
+		if (isConfirmed) {
+			console.log("✅ 삭제");
+		} else {
+			console.log("❌ 취소");
+		}
+	}
+
 
 	return (
 		<div className="">
@@ -19,20 +36,29 @@ function Popups() {
 					<PageSubTitle>Modal</PageSubTitle>
 					<ExampleItem>
 						<button type="button" className="btn__full--primary-sm"
-							onClick={() => setIsOpen(true)}>
+							onClick={() => setModalOpen(true)}>
+							open
+						</button>
+					</ExampleItem>
+				</div>
+				<div>
+					<PageSubTitle>Confirm</PageSubTitle>
+					<ExampleItem>
+						<button type="button" className="btn__full--primary-sm"
+							onClick={openConfirm}>
 							open
 						</button>
 					</ExampleItem>
 				</div>
 			</div>
 			<CmModal
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)} 
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)} 
         popupTitle="Modal Title"
 				popupFooter={
           <>
 						<button type="button" className="btn__line--gray-sm"
-							onClick={() => setIsOpen(false)}>
+							onClick={() => setModalOpen(false)}>
 							닫기
 						</button>
 						<button type="button" className="btn__full--primary-sm">
@@ -41,8 +67,8 @@ function Popups() {
           </>
         }
       >
-        <p>Hi</p>
-      </CmModal>
+        <p>Modal Contents</p>
+				</CmModal>
 		</div>
 	)
 }
