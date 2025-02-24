@@ -9,13 +9,15 @@
 - [x] Button
 - [x] Input
 - [x] Textarea
-- [ ] Dropdown
 - [x] Modal Popup
-- [ ] Alert/Confirm Popup
+- [x] Alert/Confirm Popup
+- [ ] Dropdown
 - [ ] Toast Popup
 - [ ] Tooltip
 - [ ] Form
 - [ ] Layout
+
+--- 
 
 ```
 pnpm install
