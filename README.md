@@ -6,7 +6,7 @@
 
 ### Ccomponents List
 
-- [ ] Button
+- [x] Button
 - [x] Input
 - [x] Textarea
 - [ ] Dropdown
