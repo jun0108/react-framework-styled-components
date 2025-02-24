@@ -16,7 +16,7 @@ const btnColor = {
 	line: {
 		primary: { text: "var(--color-primary-800)", default: "var(--color-primary-800)", hover: "var(--color-primary-900)", disabled: "var(--color-gray-500)" },
 		secondary: { text: "var(--color-secondary-800)", default: "var(--color-secondary-800)", hover: "var(--color-secondary-900)", disabled: "var(--color-gray-500)" },
-		gray: { text: "var(--color-gray-500)", default: "var(--color-gray-50)", hover: "var(--color-gray-100)", disabled: "var(--color-gray-200)" },
+		gray: { text: "var(--color-gray-600)", default: "var(--color-gray-600)", hover: "var(--color-gray-800)", disabled: "var(--color-gray-200)" },
 	}
 };
 /* ========================== Mixins ========================== */

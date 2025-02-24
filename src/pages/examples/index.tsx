@@ -5,6 +5,7 @@ function Example() {
 	const menuList = [
 		{ path: "button", title: 'buttons' },
 		{ path: "textfield", title: 'textfield' },
+		{ path: "popup", title: 'popups' },
 	];
 	return (
 		<div>

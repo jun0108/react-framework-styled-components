@@ -6,7 +6,7 @@ const ExampleItem = styled.div`
   align-items: center;
 `
 
-function Button() {
+function Buttons() {
 	return (
 		<div className="">
 			<PageTitle>Action Button</PageTitle>
@@ -96,4 +96,4 @@ function Button() {
 	)
 }
 
-export default Button
+export default Buttons

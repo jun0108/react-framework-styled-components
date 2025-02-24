@@ -4,6 +4,7 @@ import Todo from '~/pages/todo/TodoList'
 import Example from'~/pages/examples/index'
 import Button from'~/pages/examples/Button'
 import Textfield from'~/pages/examples/textfield'
+import Popup from'~/pages/examples/Popup'
 
 const router = createBrowserRouter([
 	{
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
 	{
 		path: '/examples/textfield',
 		Component: Textfield
+	},
+	{
+		path: '/examples/Popup',
+		Component: Popup
 	},
 ])
 

@@ -8,7 +8,7 @@ const ExampleItem = styled.div`
   display: flex;
 `
 
-function Button() {
+function Textfield() {
 		const [inputValue, setInputValue] = useState('')
 	
 	return (
@@ -52,4 +52,4 @@ function Button() {
 	)
 }
 
-export default Button
+export default Textfield
