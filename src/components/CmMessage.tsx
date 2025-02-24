@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 import { useState } from "react";
 import { PopupOverlay, ConfirmContainer, PopupHeader, PopupTitle, PopupContent, PopupFooter } from "~/styles/components/Popups";
 
-interface ConfirmOptions {
+interface MessageOptions {
   type?: "confirm" | "alert";
   popupTitle?: string;
   cancelText?: string;
@@ -10,7 +10,7 @@ interface ConfirmOptions {
   content: React.ReactNode;
 }
 
-interface ConfirmController {
+interface MessageController {
   resolve: (value: boolean) => void;
   remove: () => void;
 }
@@ -19,16 +19,16 @@ const confirmModalRoot = document.createElement("div");
 document.body.appendChild(confirmModalRoot);
 const root = createRoot(confirmModalRoot);
 
-const ConfirmService = {
+const CmMessage = {
   open: async ({
     type = "confirm",
     popupTitle,
     cancelText = "취소",
     confirmText = "확인",
     content,
-  }: ConfirmOptions): Promise<boolean> => {
+  }: MessageOptions): Promise<boolean> => {
         return new Promise((resolve) => {
-      const controller: ConfirmController = {
+      const controller: MessageController = {
         resolve,
         remove: () => {
           root.render(null);
@@ -69,4 +69,4 @@ const ConfirmService = {
   },
 };
 
-export default ConfirmService;
+export default CmMessage;
