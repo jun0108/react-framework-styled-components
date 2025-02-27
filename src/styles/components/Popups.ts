@@ -68,3 +68,25 @@ export const CloseButton = styled.button`
   ${typo({ size: "var(--font-size-20)", weight: 600, color: "var(--color-gray-900)"})};
 `;
 
+export const ToastContainer = styled.div`
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const ToastMessage = styled.div<{ $type: "success" | "error" | "info" }>`
+  ${typo({color: "var(--color-white)"})};
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 250px;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  background-color: ${({ $type }) =>
+    $type === "success" ? "green" : $type === "error" ? "red" : "gray"};
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+`;

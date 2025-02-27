@@ -1,7 +1,7 @@
-import { useState } from 'react'
 import styled from "styled-components"
 import CmMessage from '~/components/CmMessage';
 import CmModal from '~/components/CmModal';
+import CmToast from '~/components/CmToast';
 
 const ExampleItem = styled.div`
   ${space({x:'8px'})};
@@ -37,10 +37,12 @@ function Popups() {
 			console.log("삭제 확인");
 		} 
 	}
-
+	const openToast = useCallback((type: "success" | "error" | "info") => {
+		CmToast.show("성공적으로 저장되었습니다.", type, 3000);
+	}, []);
 
 	return (
-		<div className="">
+		<div>
 			<PageTitle>Popups</PageTitle>
 			<div className="p-3 mb-5 space-y-5">
 				<div>
@@ -70,6 +72,23 @@ function Popups() {
 						</button>
 					</ExampleItem>
 				</div>
+				<div>
+					<PageSubTitle>Toast</PageSubTitle>
+					<ExampleItem>
+						<button type="button" className="btn__full--primary-sm" 
+							onClick={() => openToast("success")}>
+							Success
+						</button>
+						<button type="button" className="btn__full--gray-sm" 
+							onClick={() => openToast("error")}>
+							Error
+						</button>
+						<button type="button" className="btn__full--secondary-sm" 
+							onClick={() => openToast("info")}>
+							Info
+						</button>
+					</ExampleItem>
+				</div>
 			</div>
 			<CmModal
         isOpen={modalOpen}
@@ -88,7 +107,7 @@ function Popups() {
         }
       >
         <p>Modal Contents</p>
-				</CmModal>
+			</CmModal>
 		</div>
 	)
 }

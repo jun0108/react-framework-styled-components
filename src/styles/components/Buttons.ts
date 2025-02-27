@@ -11,7 +11,7 @@ const btnColor = {
 	solid: {
 		primary: { text: "var(--color-white)", default: "var(--color-primary-800)", hover: "var(--color-primary-900)", disabled: "var(--color-gray-500)" },
 		secondary: { text: "var(--color-white)", default: "var(--color-secondary-800)", hover: "var(--color-secondary-900)", disabled: "var(--color-gray-500)" },
-		gray: { text: "var(--color-gray-500)", default: "var(--color-gray-50)", hover: "var(--color-gray-100)", disabled: "var(--color-gray-200)" },
+		gray: { text: "var(--color-white)", default: "var(--color-gray-600)", hover: "var(--color-gray-700)", disabled: "var(--color-gray-200)" },
 	},
 	line: {
 		primary: { text: "var(--color-primary-800)", default: "var(--color-primary-800)", hover: "var(--color-primary-900)", disabled: "var(--color-gray-500)" },

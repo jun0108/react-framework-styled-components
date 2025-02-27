@@ -15,9 +15,9 @@ interface MessageController {
   remove: () => void;
 }
 
-const confirmModalRoot = document.createElement("div");
-document.body.appendChild(confirmModalRoot);
-const root = createRoot(confirmModalRoot);
+const messageModalRoot = document.createElement("div");
+document.body.appendChild(messageModalRoot);
+const root = createRoot(messageModalRoot);
 
 const CmMessage = {
   open: async ({

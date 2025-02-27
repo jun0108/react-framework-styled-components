@@ -28,7 +28,7 @@ function CmModal({
         {useHeader && (
           <PopupHeader>
             {popupTitle && <PopupTitle>{popupTitle}</PopupTitle>}
-            <CloseButton onClick={onClose}>×</CloseButton>
+            <CloseButton onClick={onClose}>✖</CloseButton>
           </PopupHeader>
         )}
         <PopupContent>{children}</PopupContent>

@@ -12,7 +12,7 @@ function Textfield() {
 		const [inputValue, setInputValue] = useState('')
 	
 	return (
-		<div className="">
+		<div>
 			<PageTitle>Textfield</PageTitle>
 			<div className="p-3 mb-5 space-y-5">
 			<div style={{marginBottom: '10px'}}>

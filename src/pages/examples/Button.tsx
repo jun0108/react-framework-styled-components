@@ -8,7 +8,7 @@ const ExampleItem = styled.div`
 
 function Buttons() {
 	return (
-		<div className="">
+		<div>
 			<PageTitle>Action Button</PageTitle>
 			<div className="p-3 mb-5 space-y-5">
 				<div>
