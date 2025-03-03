@@ -1,5 +1,4 @@
 import { createRoot } from "react-dom/client"
-import { useState } from "react"
 import { PopupOverlay, ConfirmContainer, PopupHeader, PopupTitle, PopupContent, PopupFooter } from "~/styles/components/Popups"
 
 interface MessageOptions {

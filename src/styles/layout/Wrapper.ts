@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { css } from "styled-components";
-import {typo} from "~/styles/helpers/mixins/index";
+import { css } from "styled-components"
+import {typo} from "~/styles/helpers/mixins/index"
 
 export const Wrapper = () => css`
 html {
@@ -52,14 +52,14 @@ body,
 ::-webkit-scrollbar-button {
   display: none;
 }
-`;
+`
 export const Layout = styled.main`
   display: flex;
   flex-direction: column;
   height: 100%;
   margin: 0 auto;
   background-color: var(--color-white);
-`;
+`
 export const LayoutContent = styled.div`
   overflow-y: auto;
   display: flex;
@@ -68,12 +68,12 @@ export const LayoutContent = styled.div`
   max-height: calc(100% -  var(--layout-header-height));
   padding: var(--layout-padding);
   background-color: var(--color-gray-100);
-`;
+`
 export const PageTitle = styled.h1`
   ${typo({size:"var(--font-size-22)", weight: 500})};
   margin-bottom: 10px;
-`;
+`
 export const PageSubTitle = styled.h2`
   ${typo({size:"var(--font-size-18)", weight: 500, color:"var(--color-gray-800)"})};
   margin-bottom: 10px;
-`;
+`

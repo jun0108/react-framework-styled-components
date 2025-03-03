@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css } from "styled-components"
 
 export const Reset = () => css`
   *,
@@ -160,4 +160,4 @@ export const Reset = () => css`
     cursor: pointer;
     text-decoration: none;
   }
-`;
+`

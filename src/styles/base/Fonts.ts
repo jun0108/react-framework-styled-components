@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css } from "styled-components"
 
 export const Fonts = () => css`
   @font-face {
@@ -94,4 +94,4 @@ export const Fonts = () => css`
     font-weight: 900;
     font-display: swap;
   }
-`;
+`

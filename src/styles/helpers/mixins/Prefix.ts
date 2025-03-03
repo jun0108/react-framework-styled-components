@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css } from "styled-components"
 
 export const autoPrefix = ({
 	prefix,
@@ -10,4 +10,4 @@ export const autoPrefix = ({
   value: string;
   }) => css`
     -${prefix}-${name}: ${value};
-`;
+`

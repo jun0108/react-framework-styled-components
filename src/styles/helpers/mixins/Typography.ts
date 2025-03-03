@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css } from "styled-components"
 
 export const typo = ({
 	fontFamily,
@@ -18,13 +18,13 @@ export const typo = ({
     font-size: ${size};
     font-weight: ${weight};
     color: ${color};
-`;
+`
 
 export const truncate = css`
   overflow: hidden; 
   text-overflow: ellipsis;
   white-space: nowrap;
-`;
+`
 
 export const multiTruncate = ({
 	row = 2,
@@ -36,4 +36,4 @@ export const multiTruncate = ({
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: ${row};
-`;
+`

@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css } from "styled-components"
 
 export const icon = ({
 	name,
@@ -10,4 +10,4 @@ export const icon = ({
   size: string;
   }) => css`
   background: url('/icon/${name}.${format}') no-repeat center center/${size};
-`;
+`

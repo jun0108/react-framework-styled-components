@@ -1,11 +1,11 @@
-import { Header, HeaderLogo, HeaderList, HeaderItem } from "~/styles/layout/Header";
-import router from "~/shared/route"; 
+import { Header, HeaderLogo, HeaderList, HeaderItem } from "~/styles/layout/Header"
+import router from "~/shared/route" 
 
 const MainHeader = () => {
 	const menuList = [
 		{ path: "/todo", title: "TODO" },
 		{ path: "/examples", title: "EXAMPLE" },
-	];
+	]
 
 	return (
 		<Header>
@@ -20,7 +20,7 @@ const MainHeader = () => {
 				))}
 			</HeaderList>
 		</Header>
-	);
-};
+	)
+}
 
-export default MainHeader;
+export default MainHeader

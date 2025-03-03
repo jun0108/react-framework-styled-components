@@ -1,10 +1,10 @@
-import { createGlobalStyle } from "styled-components";
-import {Reset} from "./base/Resets";
-import {Fonts} from "./base/Fonts";
-import {Variables} from "./helpers/Variables";
-import {Wrapper} from "./layout/Wrapper";
-import {Buttons} from "./components/Buttons";
-import {Chips} from "./components/Chips";
+import { createGlobalStyle } from "styled-components"
+import {Reset} from "./base/Resets"
+import {Fonts} from "./base/Fonts"
+import {Variables} from "./helpers/Variables"
+import {Wrapper} from "./layout/Wrapper"
+import {Buttons} from "./components/Buttons"
+import {Chips} from "./components/Chips"
 
 const GlobalStyles = createGlobalStyle`
 /* base */
@@ -17,6 +17,6 @@ ${Wrapper}
 /* components */
 ${Buttons}
 ${Chips}
-`;
+`
 
-export { GlobalStyles }; 
+export { GlobalStyles } 
