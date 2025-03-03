@@ -6,7 +6,6 @@ import tseslint from 'typescript-eslint'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
 import react from 'eslint-plugin-react'
 import noRelativeImportPaths from 'eslint-plugin-no-relative-import-paths'
-import prettier from 'prettier'
 
 export default tseslint.config(
 	{ ignores: ['dist'] },
@@ -22,7 +21,6 @@ export default tseslint.config(
 			'react-hooks': reactHooks,
 			'react-refresh': reactRefresh,
 			'no-relative-import-paths': noRelativeImportPaths,
-			'prettier': prettier
 		},
 		languageOptions: {
 			globals: globals.browser,

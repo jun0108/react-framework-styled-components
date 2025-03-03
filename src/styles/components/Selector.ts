@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {icon} from "~/styles/helpers/mixins/index";
+import {icon} from "~/styles/helpers/mixins/index"
 /*/* ========================== Variables ========================== */
 /* ========================== Mixins ========================== */
 /* ========================== Styles ========================== */
@@ -25,7 +25,7 @@ export const CmCheckbox = styled.input`
       margin-top: 1px;
     }
   }
-`;
+`
 export const CmRadio = styled.input`
   box-sizing: border-box;
   background-clip: content-box;
@@ -41,4 +41,4 @@ export const CmRadio = styled.input`
     border: 2px solid var(--color-primary-800);
     background-color: var(--color-primary-800);
   }
-`;
+`

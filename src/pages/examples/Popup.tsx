@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import CmMessage from '~/components/CmMessage';
-import CmModal from '~/components/CmModal';
-import CmToast from '~/components/CmToast';
+import CmMessage from '~/components/CmMessage'
+import CmModal from '~/components/CmModal'
+import CmToast from '~/components/CmToast'
 
 const ExampleItem = styled.div`
   ${space({x:'8px'})};
@@ -10,7 +10,7 @@ const ExampleItem = styled.div`
 `
 
 function Popups() {
-	const [modalOpen, setModalOpen] = useState(false);
+	const [modalOpen, setModalOpen] = useState(false)
 
 	async function openConfirm() {
 		const isConfirmed = await CmMessage.open({
@@ -18,11 +18,11 @@ function Popups() {
 			content: "되돌릴 수 없습니다.",
 			confirmText: "삭제",
 			cancelText: "취소",
-		});
+		})
 		if (isConfirmed) {
-			console.log("✅ 삭제");
+			console.log("✅ 삭제")
 		} else {
-			console.log("❌ 취소");
+			console.log("❌ 취소")
 		}
 	}
 
@@ -32,14 +32,14 @@ function Popups() {
 			popupTitle: "삭제 확인",
 			content: "삭제 되었습니다.",
 			confirmText: "닫기",
-		});
+		})
 		if (isAlert) {
-			console.log("삭제 확인");
+			console.log("삭제 확인")
 		} 
 	}
 	const openToast = useCallback((type: "success" | "error" | "info") => {
-		CmToast.show("성공적으로 저장되었습니다.", type, 3000);
-	}, []);
+		CmToast.show("성공적으로 저장되었습니다.", type, 3000)
+	}, [])
 
 	return (
 		<div>
@@ -91,11 +91,11 @@ function Popups() {
 				</div>
 			</div>
 			<CmModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)} 
-        popupTitle="Modal Title"
+				isOpen={modalOpen}
+				onClose={() => setModalOpen(false)} 
+				popupTitle="Modal Title"
 				popupFooter={
-          <>
+					<>
 						<button type="button" className="btn__line--gray-sm"
 							onClick={() => setModalOpen(false)}>
 							닫기
@@ -103,10 +103,10 @@ function Popups() {
 						<button type="button" className="btn__full--primary-sm">
 							확인
 						</button>
-          </>
-        }
-      >
-        <p>Modal Contents</p>
+					</>
+				}
+			>
+				<p>Modal Contents</p>
 			</CmModal>
 		</div>
 	)

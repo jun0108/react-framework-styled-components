@@ -1,12 +1,12 @@
-import router from "~/shared/route"; 
-import { PageTitle, PageSubTitle } from "~/styles/layout/Wrapper";
+import router from "~/shared/route" 
+import { PageTitle, PageSubTitle } from "~/styles/layout/Wrapper"
 
 function Example() {
 	const menuList = [
 		{ path: "button", title: 'buttons' },
 		{ path: "textfield", title: 'textfield' },
 		{ path: "popup", title: 'popups' },
-	];
+	]
 	return (
 		<div>
 			<PageTitle>UI EXAMPLE</PageTitle>

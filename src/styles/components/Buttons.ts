@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css } from "styled-components"
 
 /* ========================== Variables ========================== */
 const btnSize: Record<"sm" | "md" | "lg" | "xl", { minWidth: string; height: string; padding: string }> = {
@@ -6,7 +6,7 @@ const btnSize: Record<"sm" | "md" | "lg" | "xl", { minWidth: string; height: str
 	md: { minWidth: "80px", height: "var(--form-height-md)", padding: "10px" },
 	lg: { minWidth: "100px", height: "var(--form-height-lg)", padding: "20px" },
 	xl: { minWidth: "120px", height: "var(--form-height-xl)", padding: "20px" },
-};
+}
 const btnColor = {
 	solid: {
 		primary: { text: "var(--color-white)", default: "var(--color-primary-800)", hover: "var(--color-primary-900)", disabled: "var(--color-gray-500)" },
@@ -18,7 +18,7 @@ const btnColor = {
 		secondary: { text: "var(--color-secondary-800)", default: "var(--color-secondary-800)", hover: "var(--color-secondary-900)", disabled: "var(--color-gray-500)" },
 		gray: { text: "var(--color-gray-600)", default: "var(--color-gray-600)", hover: "var(--color-gray-800)", disabled: "var(--color-gray-200)" },
 	}
-};
+}
 /* ========================== Mixins ========================== */
 const btnBase = (size: keyof typeof btnSize) => css`
   display: inline-block;
@@ -29,7 +29,7 @@ const btnBase = (size: keyof typeof btnSize) => css`
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: var(--transition);
-`;
+`
 const btnVariable = (type: "solid" | "line", color: keyof typeof btnColor.solid) => css`
   color: ${btnColor[type][color].text};
   background-color: ${type === "solid" ? btnColor[type][color].default : "transparent"};
@@ -46,7 +46,7 @@ const btnVariable = (type: "solid" | "line", color: keyof typeof btnColor.solid)
     background-color: ${type === "solid" ? btnColor[type][color].disabled : "transparent"};
     border-color: ${btnColor[type][color].disabled};
   }
-`;
+`
 /* ========================== Styles ========================== */
 export const Buttons = () => css`
   ${Object.keys(btnColor.solid).map((color) =>
@@ -65,4 +65,4 @@ export const Buttons = () => css`
       }
     `)
 	)}
-`;
+`

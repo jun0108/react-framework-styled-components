@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 /* ========================== Variables ========================== */
 
 /* ========================== Mixins ========================== */
@@ -16,7 +16,7 @@ export const PopupOverlay = styled.div`
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   transition: var(--transition);
-`;
+`
 
 export const PopupHeader = styled.div`
   display: flex;
@@ -24,14 +24,14 @@ export const PopupHeader = styled.div`
   align-items: center;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--color-gray-300);
-`;
+`
 
 export const PopupContent = styled.div`
   ${typo({})};
   overflow-y: auto;
   max-height: 600px;
   padding: 12px 0;
-`;
+`
 
 export const PopupFooter = styled.div`
   display: flex;
@@ -40,7 +40,7 @@ export const PopupFooter = styled.div`
   button + button {
     margin-left: 8px;
   }
-`;
+`
 
 export const ModalContainer = styled.div`
   display: flex;
@@ -49,7 +49,7 @@ export const ModalContainer = styled.div`
   padding: 12px 20px;
   background: var(--color-white);
   border-radius: var(--radius-md);
-`;
+`
 
 export const ConfirmContainer = styled.div`
   display: flex;
@@ -58,15 +58,15 @@ export const ConfirmContainer = styled.div`
   padding: 12px 20px;
   background: var(--color-white);
   border-radius: var(--radius-md);
-`;
+`
 
 export const PopupTitle = styled.h2`
   ${typo({ size: "var(--font-size-18)", weight: 600, color: "var(--color-gray-900)"})};
-`;
+`
 
 export const CloseButton = styled.button`
   ${typo({ size: "var(--font-size-20)", weight: 600, color: "var(--color-gray-900)"})};
-`;
+`
 
 export const ToastContainer = styled.div`
   position: fixed;
@@ -76,7 +76,7 @@ export const ToastContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-`;
+`
 
 export const ToastMessage = styled.div<{ $type: "success" | "error" | "info" }>`
   ${typo({color: "var(--color-white)"})};
@@ -87,6 +87,6 @@ export const ToastMessage = styled.div<{ $type: "success" | "error" | "info" }>`
   padding: 12px 20px;
   border-radius: var(--radius-md);
   background-color: ${({ $type }) =>
-    $type === "success" ? "green" : $type === "error" ? "red" : "gray"};
+		$type === "success" ? "green" : $type === "error" ? "red" : "gray"};
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-`;
+`

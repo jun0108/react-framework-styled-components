@@ -15,7 +15,7 @@ function Icon({ name, extension = "svg", alt = "", width, height }: IIcon) {
 			width={`${width}px`}
 			height={`${height}px`}
 		/>
-	);
+	)
 }
 
-export default Icon;
+export default Icon

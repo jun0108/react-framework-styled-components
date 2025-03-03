@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styled from "styled-components"
-import CmInput from '~/components/CmInput';
-import CmTextarea from '~/components/CmTextarea';
+import CmInput from '~/components/CmInput'
+import CmTextarea from '~/components/CmTextarea'
 
 const ExampleItem = styled.div`
   ${space({x:'8px'})};
@@ -9,13 +9,13 @@ const ExampleItem = styled.div`
 `
 
 function Textfield() {
-		const [inputValue, setInputValue] = useState('')
+	const [inputValue, setInputValue] = useState('')
 	
 	return (
 		<div>
 			<PageTitle>Textfield</PageTitle>
 			<div className="p-3 mb-5 space-y-5">
-			<div style={{marginBottom: '10px'}}>
+				<div style={{marginBottom: '10px'}}>
 					<PageSubTitle>Input</PageSubTitle>
 					<ExampleItem>
 						<CmInput type='text' value={inputValue} placeholder='입력해주세요.' onChange={(e) => setInputValue(e.target.value)} />

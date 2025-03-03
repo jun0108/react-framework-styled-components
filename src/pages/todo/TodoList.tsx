@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import TodoItem from './TodoItem'
-import CmInput from '~/components/CmInput';
+import CmInput from '~/components/CmInput'
 
 interface Todo {
   id: number;
@@ -45,8 +45,8 @@ const Todo = () => {
 	const toggleChecked = (id: number) => {
 		setTodoList(todoList.map(todo =>
 			todo.id === id ? { ...todo, selected: !todo.selected } : todo
-		));
-	};
+		))
+	}
 
 	const handleDeleteTodo = (id: number) => {
 		setTodoList(todoList.filter((todo) => todo.id !== id))
