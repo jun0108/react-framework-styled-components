@@ -49,7 +49,7 @@ const colorMap = {
 		400: "#D1D5DB",
 		300: "#E5E7EB",
 		200: "#F3F4F6",
-		100: "#F9FAFB",
+		100: "#fff3e4",
 	},
 	red: {
 		900: "#c2172b",

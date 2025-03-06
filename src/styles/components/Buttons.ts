@@ -9,14 +9,14 @@ const btnSize: Record<"sm" | "md" | "lg" | "xl", { minWidth: string; height: str
 }
 const btnColor = {
 	solid: {
-		primary: { text: "var(--color-white)", default: "var(--color-primary-800)", hover: "var(--color-primary-900)", disabled: "var(--color-gray-500)" },
-		secondary: { text: "var(--color-white)", default: "var(--color-secondary-800)", hover: "var(--color-secondary-900)", disabled: "var(--color-gray-500)" },
-		gray: { text: "var(--color-white)", default: "var(--color-gray-600)", hover: "var(--color-gray-700)", disabled: "var(--color-gray-200)" },
+		primary: { text: "var(--color-white)", default: "var(--color-primary-800)", hover: "var(--color-primary-900)", disabled: "var(--color-gray-600)" },
+		secondary: { text: "var(--color-white)", default: "var(--color-secondary-800)", hover: "var(--color-secondary-900)", disabled: "var(--color-gray-600)" },
+		gray: { text: "var(--color-white)", default: "var(--color-gray-700)", hover: "var(--color-gray-800)", disabled: "var(--color-gray-600)" },
 	},
 	line: {
-		primary: { text: "var(--color-primary-800)", default: "var(--color-primary-800)", hover: "var(--color-primary-900)", disabled: "var(--color-gray-500)" },
-		secondary: { text: "var(--color-secondary-800)", default: "var(--color-secondary-800)", hover: "var(--color-secondary-900)", disabled: "var(--color-gray-500)" },
-		gray: { text: "var(--color-gray-600)", default: "var(--color-gray-600)", hover: "var(--color-gray-800)", disabled: "var(--color-gray-200)" },
+		primary: { text: "var(--color-primary-800)", default: "var(--color-primary-800)", hover: "var(--color-primary-900)", disabled: "var(--color-gray-600)" },
+		secondary: { text: "var(--color-secondary-800)", default: "var(--color-secondary-800)", hover: "var(--color-secondary-900)", disabled: "var(--color-gray-600)" },
+		gray: { text: "var(--color-gray-700)", default: "var(--color-gray-700)", hover: "var(--color-gray-800)", disabled: "var(--color-gray-600)" },
 	}
 }
 /* ========================== Mixins ========================== */
@@ -26,12 +26,12 @@ const btnBase = (size: keyof typeof btnSize) => css`
   min-width: ${btnSize[size].minWidth};
   height: ${btnSize[size].height};
   padding: 0 ${btnSize[size].padding};
-  border-radius: var(--radius-md);
+  border-radius: calc(${btnSize[size].height} / 2);
   cursor: pointer;
   transition: var(--transition);
 `
 const btnVariable = (type: "solid" | "line", color: keyof typeof btnColor.solid) => css`
-  color: ${btnColor[type][color].text};
+  ${typo({ size: "var(--font-size-14)", weight: 500,  color: btnColor[type][color].text })};
   background-color: ${type === "solid" ? btnColor[type][color].default : "transparent"};
   border: 1px solid ${btnColor[type][color].default};
 
