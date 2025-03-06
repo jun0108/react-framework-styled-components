@@ -33,15 +33,6 @@ export const PopupContent = styled.div`
   padding: 12px 0;
 `
 
-export const PopupFooter = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 12px;
-  button + button {
-    margin-left: 8px;
-  }
-`
-
 export const ModalContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -51,6 +42,14 @@ export const ModalContainer = styled.div`
   border-radius: var(--radius-md);
 `
 
+export const ModalFooter = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 12px;
+  button + button {
+    margin-left: 8px;
+  }
+`
 export const ConfirmContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -58,6 +57,17 @@ export const ConfirmContainer = styled.div`
   padding: 12px 20px;
   background: var(--color-white);
   border-radius: var(--radius-md);
+`
+
+export const ConfirmFooter = styled.div`
+  display: flex;
+  padding-top: 12px;
+  button {
+    flex: 1 1 0%;
+    & + button {
+      margin-left: 8px;
+    }
+  }
 `
 
 export const PopupTitle = styled.h2`

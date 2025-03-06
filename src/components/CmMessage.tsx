@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client"
-import { PopupOverlay, ConfirmContainer, PopupHeader, PopupTitle, PopupContent, PopupFooter } from "~/styles/components/Popups"
+import { PopupOverlay, ConfirmContainer, PopupHeader, PopupTitle, PopupContent, ConfirmFooter } from "~/styles/components/Popups"
 
 interface MessageOptions {
   type?: "confirm" | "alert";
@@ -51,7 +51,7 @@ const CmMessage = {
 							{popupTitle && <PopupTitle>{popupTitle}</PopupTitle>}
 						</PopupHeader>
 						<PopupContent>{content}</PopupContent>
-						<PopupFooter>
+						<ConfirmFooter>
 							{type === 'confirm' && (
 								<button type="button" onClick={handleCancel} className="btn__line--gray-sm">
 									{cancelText}
@@ -60,7 +60,7 @@ const CmMessage = {
 							<button type="button" onClick={handleConfirm} className="btn__full--primary-sm">
 								{confirmText}
 							</button>
-						</PopupFooter>
+						</ConfirmFooter>
 					</ConfirmContainer>
 				</PopupOverlay>
 			)
