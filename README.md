@@ -11,8 +11,8 @@
 - [x] Textarea
 - [x] Modal Popup
 - [x] Alert/Confirm Popup
+- [x] Toast Popup
 - [ ] Dropdown
-- [ ] Toast Popup
 - [ ] Tooltip
 - [ ] Form
 - [ ] Layout
