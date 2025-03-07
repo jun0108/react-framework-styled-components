@@ -1,44 +1,58 @@
 import { createRoot } from "react-dom/client"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
+import { CSSTransition, TransitionGroup } from "react-transition-group"
 import { ToastContainer, ToastMessage } from "~/styles/components/Popups"
 
-interface ToastProps {
-  message: string;
-  type?: "success" | "error" | "info";
-  duration?: number;
-  onClose: () => void;
+interface ToastData {
+  id: number
+  message: string
+  type: "success" | "error" | "info"
+  duration: number
+  visible: boolean 
 }
 
-const Toast = ({ message, type = "info", duration = 3000, onClose }: ToastProps) => {
+const Toast = ({ message, type, duration = 3000, visible, onClose }: Omit<ToastData, "id"> & { onClose: () => void }) => {
+	const nodeRef = useRef<HTMLDivElement>(null)
+
 	useEffect(() => {
-		const timer = setTimeout(onClose, duration)
+		const timer = setTimeout(onClose, Math.max(duration - 300, 0)) 
 		return () => clearTimeout(timer)
 	}, [duration, onClose])
 
 	return (
-		<ToastMessage $type={type}>
-			{message}
-			<button onClick={onClose} style={{ marginLeft: "10px", background: "transparent", border: "none", color: "white", cursor: "pointer" }}>
-				✖
-			</button>
-		</ToastMessage>
+		<CSSTransition
+			nodeRef={nodeRef}
+			timeout={300}
+			classNames="toast-slide"
+			unmountOnExit
+			in={visible}
+			onExited={onClose}
+		>
+			<ToastMessage ref={nodeRef} $type={type}>
+				{message}
+				<button onClick={onClose}>✖</button>
+			</ToastMessage>
+		</CSSTransition>
 	)
 }
 
 const ToastManager = () => {
-	const [toasts, setToasts] = useState<{ id: number; message: string; type: "success" | "error" | "info"; duration: number }[]>([])
+	const [toasts, setToasts] = useState<ToastData[]>([])
 
 	const addToast = (message: string, type: "success" | "error" | "info", duration: number) => {
 		const id = Date.now()
-		setToasts((prev) => [...prev, { id, message, type, duration }])
+		setToasts((prev) => [...prev, { id, message, type, duration, visible: true }]) 
 
-		setTimeout(() => {
-			removeToast(id)
-		}, duration)
+		setTimeout(() => removeToast(id), duration)
 	}
 
 	const removeToast = (id: number) => {
-		setToasts((prev) => prev.filter((toast) => toast.id !== id))
+		setToasts((prev) =>
+			prev.map((toast) => (toast.id === id ? { ...toast, visible: false } : toast))
+		)
+		setTimeout(() => {
+			setToasts((prev) => prev.filter((toast) => toast.id !== id))
+		}, 300)
 	}
 
 	useEffect(() => {
@@ -47,9 +61,11 @@ const ToastManager = () => {
 
 	return (
 		<ToastContainer>
-			{toasts.map((toast) => (
-				<Toast key={toast.id} message={toast.message} type={toast.type} duration={toast.duration} onClose={() => removeToast(toast.id)} />
-			))}
+			<TransitionGroup>
+				{toasts.map(({ id, message, type, duration, visible }) => (
+					<Toast key={id} message={message} type={type} duration={duration} visible={visible} onClose={() => removeToast(id)} />
+				))}
+			</TransitionGroup>
 		</ToastContainer>
 	)
 }

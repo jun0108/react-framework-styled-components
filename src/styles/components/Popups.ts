@@ -43,6 +43,25 @@ export const Popups = () => css`
   transform: translate(-50%, calc(-50% + 20px));
   transition: 0.2s ease-out;
 }
+
+.toast-slide-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.toast-slide-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.toast-slide-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.toast-slide-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
+}
 `
 
 export const PopupOverlay = styled.div`
@@ -85,7 +104,6 @@ left: 50%;
   background: var(--color-white);
   border-radius: var(--radius-md);
   transform: translate(-50%, -50%); 
-
 `
 
 export const ModalFooter = styled.div`
@@ -131,12 +149,14 @@ export const CloseButton = styled.button`
 
 export const ToastContainer = styled.div`
   position: fixed;
-  top: 20px;
+  top: calc(var(--layout-header-height) + 10px);
   right: 20px;
   z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 `
 
 export const ToastMessage = styled.div<{ $type: "success" | "error" | "info" }>`
@@ -148,6 +168,7 @@ export const ToastMessage = styled.div<{ $type: "success" | "error" | "info" }>`
   padding: 12px 20px;
   border-radius: var(--radius-md);
   background-color: ${({ $type }) =>
-		$type === "success" ? "green" : $type === "error" ? "red" : "gray"};
+		$type === "success" ? "var(--color-primary-700)" : $type === "error" ? "var(--color-red-900)" : "var(--color-gray-700)"
+};
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 `

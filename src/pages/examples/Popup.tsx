@@ -38,7 +38,15 @@ function Popups() {
 		} 
 	}
 	const openToast = useCallback((type: "success" | "error" | "info") => {
-		CmToast.show("Toast Message", type, 3000)
+		if (type === "success"){
+			CmToast.show("저장에 성공했습니다.", type, 3000)
+		}
+		if (type === "error"){
+			CmToast.show("저장에 실패했습니다.", type, 3000)
+		}
+		if (type === "info"){
+			CmToast.show("Toast Message", type, 3000)
+		}
 	}, [])
 
 	return (
