@@ -12,20 +12,20 @@ const ExampleItem = styled.div`
 function Popups() {
 	const [modalOpen, setModalOpen] = useState(false)
 
-	async function openConfirm() {
-		const isConfirmed = await CmMessage.open({
+	const openConfirm = async () => {
+		const result = await CmMessage.open({
 			popupTitle: "정말 삭제하시겠습니까?",
 			content: "되돌릴 수 없습니다.",
 			confirmText: "삭제",
 			cancelText: "취소",
 		})
-		if (isConfirmed) {
+	
+		if (result) {
 			console.log("✅ 삭제")
 		} else {
 			console.log("❌ 취소")
 		}
 	}
-
 	async function openAlert() {
 		const isAlert = await CmMessage.open({
 			type: 'alert',

@@ -1,5 +1,14 @@
-import React from "react"
-import { PopupOverlay, ModalContainer, PopupHeader, PopupTitle, CloseButton, PopupContent, ModalFooter } from "~/styles/components/Popups"
+import React, { useState, useEffect, useRef } from "react"
+import { CSSTransition } from "react-transition-group"
+import { 
+	PopupOverlay, 
+	ModalContainer, 
+	PopupHeader, 
+	PopupTitle, 
+	CloseButton, 
+	PopupContent, 
+	ModalFooter 
+} from "~/styles/components/Popups"
 
 interface ModalProps {
   isOpen: boolean;
@@ -20,21 +29,40 @@ function CmModal({
 	popupFooter,
 	children
 }: ModalProps) {
-	if (!isOpen) return null
+	const [isFade, setIsFade] = useState(false)
+	const [isSlide, setIsSlide] = useState(false)
+	const overlayRef = useRef(null)
+	const containerRef = useRef(null)
+
+	useEffect(() => {
+		if (isOpen) {
+			setTimeout(() => setIsFade(true), 10) 
+			setTimeout(() => setIsSlide(true), 20) 
+		} else {
+			setIsFade(false) 
+			setIsSlide(false) 
+		}
+	}, [isOpen])
 
 	return (
-		<PopupOverlay>
-			<ModalContainer>
-				{useHeader && (
-					<PopupHeader>
-						{popupTitle && <PopupTitle>{popupTitle}</PopupTitle>}
-						<CloseButton onClick={onClose}>✖</CloseButton>
-					</PopupHeader>
-				)}
-				<PopupContent>{children}</PopupContent>
-				{useFooter && <ModalFooter>{popupFooter}</ModalFooter>}
-			</ModalContainer>
-		</PopupOverlay>
+		<CSSTransition in={isFade} timeout={200} classNames="fade" unmountOnExit nodeRef={overlayRef}>
+			<div ref={overlayRef}>
+				<PopupOverlay>
+					<CSSTransition in={isSlide} timeout={200} classNames="slide" unmountOnExit nodeRef={containerRef}>
+						<ModalContainer ref={containerRef}>
+							{useHeader && (
+								<PopupHeader>
+									{popupTitle && <PopupTitle>{popupTitle}</PopupTitle>}
+									<CloseButton onClick={onClose}>✖</CloseButton>
+								</PopupHeader>
+							)}
+							<PopupContent>{children}</PopupContent>
+							{useFooter && <ModalFooter>{popupFooter}</ModalFooter>}
+						</ModalContainer>
+					</CSSTransition>
+				</PopupOverlay>
+			</div>
+		</CSSTransition>
 	)
 }
 

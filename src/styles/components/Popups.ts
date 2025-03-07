@@ -1,9 +1,50 @@
 import styled from "styled-components"
+import { css } from "styled-components"
 /* ========================== Variables ========================== */
 
 /* ========================== Mixins ========================== */
 
 /* ========================== Styles ========================== */
+export const Popups = () => css`
+/* 🟢 PopupOverlay 페이드 애니메이션 */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.2s ease-out;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+/* 🔵 ConfirmContainer 페이드 + 슬라이드 애니메이션 */
+.slide-enter {
+  transform: translate(-50%, calc(-50% + 20px)); 
+}
+
+.slide-enter-active {
+  transform: translate(-50%, -50%); 
+  transition: 0.2s ease-out;
+}
+
+.slide-exit {
+  transform: translate(-50%, -50%); 
+}
+
+.slide-exit-active {
+  transform: translate(-50%, calc(-50% + 20px));
+  transition: 0.2s ease-out;
+}
+`
+
 export const PopupOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -34,12 +75,17 @@ export const PopupContent = styled.div`
 `
 
 export const ModalContainer = styled.div`
+position: fixed;
+top: 50%;
+left: 50%;
   display: flex;
   flex-direction: column;
   width: 600px;
   padding: 12px 20px;
   background: var(--color-white);
   border-radius: var(--radius-md);
+  transform: translate(-50%, -50%); 
+
 `
 
 export const ModalFooter = styled.div`
@@ -51,12 +97,17 @@ export const ModalFooter = styled.div`
   }
 `
 export const ConfirmContainer = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1001;
   display: flex;
   flex-direction: column;
   width: 400px;
   padding: 12px 20px;
   background: var(--color-white);
   border-radius: var(--radius-md);
+  transform: translate(-50%, -50%); 
 `
 
 export const ConfirmFooter = styled.div`
@@ -98,5 +149,5 @@ export const ToastMessage = styled.div<{ $type: "success" | "error" | "info" }>`
   border-radius: var(--radius-md);
   background-color: ${({ $type }) =>
 		$type === "success" ? "green" : $type === "error" ? "red" : "gray"};
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 `

@@ -3,6 +3,7 @@ import {Reset} from "./base/Resets"
 import {Fonts} from "./base/Fonts"
 import {Variables} from "./helpers/Variables"
 import {Wrapper} from "./layout/Wrapper"
+import {Popups} from "./components/Popups"
 import {Buttons} from "./components/Buttons"
 import {Chips} from "./components/Chips"
 
@@ -16,6 +17,7 @@ ${Variables}
 ${Wrapper}
 /* components */
 ${Buttons}
+${Popups}
 ${Chips}
 `
 
