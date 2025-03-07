@@ -2,6 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import TodoItem from './TodoItem'
 import CmInput from '~/components/CmInput'
+import CmToast from '~/components/CmToast'
 
 interface Todo {
   id: number;
@@ -29,19 +30,24 @@ const Todo = () => {
 	const [inputValue, setInputValue] = useState('')
   
 	const handleAddTodo = () => {
-		if (inputValue.trim() === '') 
-			return
-
 		const newTodo: Todo = {
 			id: Date.now(),
 			text: inputValue,
 			selected: false
 		}
-    
-		setTodoList([...todoList, newTodo])
-		setInputValue('')
-	}
+	
+		if (inputValue.trim() === "") return
+	
+		const isDuplicate = todoList.some(todo => todo.text === inputValue)
+		if (isDuplicate) {
+			CmToast.show("이미 있는 할일 입니다.", 'error')
+			return
+		}
 
+		setTodoList([...todoList, newTodo])
+		setInputValue("")
+	}
+	
 	const toggleChecked = (id: number) => {
 		setTodoList(todoList.map(todo =>
 			todo.id === id ? { ...todo, selected: !todo.selected } : todo

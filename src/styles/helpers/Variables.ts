@@ -3,6 +3,7 @@ import { css } from "styled-components"
 
 /* Typography */
 const fontSizeMap = {
+	32: "32px",
 	28: "28px",
 	24: "24px",
 	22: "22px",
@@ -49,7 +50,7 @@ const colorMap = {
 		400: "#D1D5DB",
 		300: "#E5E7EB",
 		200: "#F3F4F6",
-		100: "#fff3e4",
+		100: "#FFF3E4",
 	},
 	red: {
 		900: "#c2172b",

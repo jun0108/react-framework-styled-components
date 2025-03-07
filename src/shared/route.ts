@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router"
 
+import Home from "~/pages/home"
 import Todo from '~/pages/todo/TodoList'
 import Example from'~/pages/examples/index'
 import Button from'~/pages/examples/Button'
@@ -7,6 +8,10 @@ import Textfield from'~/pages/examples/textfield'
 import Popup from'~/pages/examples/Popup'
 
 const router = createBrowserRouter([
+	{
+		path: '/',
+		Component: Home
+	},
 	{
 		path: '/todo',
 		Component: Todo

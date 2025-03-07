@@ -6,39 +6,31 @@ import { css } from "styled-components"
 
 /* ========================== Styles ========================== */
 export const Popups = () => css`
-/* 🟢 PopupOverlay 페이드 애니메이션 */
 .fade-enter {
   opacity: 0;
 }
-
 .fade-enter-active {
   opacity: 1;
   transition: opacity 0.2s ease-out;
 }
-
 .fade-exit {
   opacity: 1;
 }
-
 .fade-exit-active {
   opacity: 0;
   transition: opacity 0.2s ease-out;
 }
 
-/* 🔵 ConfirmContainer 페이드 + 슬라이드 애니메이션 */
 .slide-enter {
   transform: translate(-50%, calc(-50% + 20px)); 
 }
-
 .slide-enter-active {
   transform: translate(-50%, -50%); 
   transition: 0.2s ease-out;
 }
-
 .slide-exit {
   transform: translate(-50%, -50%); 
 }
-
 .slide-exit-active {
   transform: translate(-50%, calc(-50% + 20px));
   transition: 0.2s ease-out;

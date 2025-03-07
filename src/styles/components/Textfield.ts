@@ -27,7 +27,7 @@ export const TextfieldInput = styled.input<{ $isValid: boolean }>`
   min-width: 250px;
   height: var(--form-height-md);
   padding: 0 8px;
-  background: var(--color-gray-100);
+  background: var(--color-white);
   border: 1px solid ;
   border-color: ${({ $isValid }) => ($isValid ? "var(--color-red-900)" : "var(--color-gray-500)")};
   border-radius: var(--radius-md);
@@ -60,7 +60,7 @@ export const TextfieldTextarea = styled.textarea<{ $isValid: boolean, $resize: "
   min-width: 250px;
   min-height: 150px;
   padding: 8px;
-  background: var(--color-gray-100);
+  background: var(--color-white);
   border: 1px solid ;
   border-color: ${({ $isValid }) => ($isValid ? "var(--color-red-900)" : "var(--color-gray-500)")};
   border-radius: var(--radius-md);
