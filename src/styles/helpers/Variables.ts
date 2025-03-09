@@ -3,6 +3,7 @@ import { css } from "styled-components"
 
 /* Typography */
 const fontSizeMap = {
+	48: "48px",
 	32: "32px",
 	28: "28px",
 	24: "24px",
