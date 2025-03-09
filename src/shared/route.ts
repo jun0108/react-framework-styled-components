@@ -4,10 +4,15 @@ import Home from "~/pages/home"
 import Todo from '~/pages/todo/TodoList'
 import Example from'~/pages/examples/index'
 import Button from'~/pages/examples/Button'
-import Textfield from'~/pages/examples/textfield'
+import Textfield from'~/pages/examples/Textfield'
 import Popup from'~/pages/examples/Popup'
+import NotFound from "~/pages/error/404"
 
 const router = createBrowserRouter([
+	{
+		path: "*", 
+		Component: NotFound,
+	},
 	{
 		path: '/',
 		Component: Home
