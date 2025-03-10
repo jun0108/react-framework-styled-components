@@ -1,4 +1,5 @@
 import { css } from "styled-components"
+import { typo } from "~/styles/helpers/mixins"
 
 /* ========================== Variables ========================== */
 const btnSize: Record<"sm" | "md" | "lg" | "xl", { minWidth: string; height: string; padding: string }> = {

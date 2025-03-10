@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { css } from "styled-components"
+import { typo } from "~/styles/helpers/mixins"
 /* ========================== Variables ========================== */
 
 /* ========================== Mixins ========================== */

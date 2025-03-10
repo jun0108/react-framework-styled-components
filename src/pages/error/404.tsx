@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import router from "~/shared/route" 
+import { typo } from '~/styles/helpers/mixins'
 
 const ErrorWrapper = styled.div`
   display: flex;

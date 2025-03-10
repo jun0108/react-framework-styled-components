@@ -2,6 +2,8 @@ import { useState } from 'react'
 import styled from "styled-components"
 import CmInput from '~/components/CmInput'
 import CmTextarea from '~/components/CmTextarea'
+import { space } from '~/styles/helpers/mixins'
+import { PageSubTitle, PageTitle } from "~/styles/layout/Wrapper"
 
 const ExampleItem = styled.div`
   ${space({x:'8px'})};

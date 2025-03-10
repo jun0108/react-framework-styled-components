@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import TodoItem from './TodoItem'
 import CmInput from '~/components/CmInput'
 import CmToast from '~/components/CmToast'
+import { space } from '~/styles/helpers/mixins'
 
 interface Todo {
   id: number;

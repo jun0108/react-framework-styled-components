@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { typo } from '~/styles/helpers/mixins'
 
 const HomeWrapper = styled.div`
   padding: 130px 100px;
