@@ -37,7 +37,7 @@ function Popups() {
 			console.log("삭제 확인")
 		} 
 	}
-	const openToast = useCallback((type: "success" | "error" | "info") => {
+	const openToast = (type: "success" | "error" | "info") => {
 		if (type === "success"){
 			CmToast.show("저장에 성공했습니다.", type, 3000)
 		}
@@ -47,7 +47,7 @@ function Popups() {
 		if (type === "info"){
 			CmToast.show("Toast Message", type, 3000)
 		}
-	}, [])
+	}
 
 	return (
 		<div>

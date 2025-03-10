@@ -16,7 +16,6 @@ const ErrorTitle = styled.h1`
 const ErrorSubTitle = styled.h2`
   ${typo({size:"var(--font-size-32)", color:"var(--color-gray-600)", weight: 700})};
   margin-bottom: 20px;
-
 `
 
 const NotFound = () => {

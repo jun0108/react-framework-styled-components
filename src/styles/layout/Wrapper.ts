@@ -58,7 +58,6 @@ export const Layout = styled.main`
   flex-direction: column;
   height: 100%;
   margin: 0 auto;
-  background-color: var(--color-white);
 `
 export const LayoutContent = styled.div`
   overflow-y: auto;
@@ -67,7 +66,7 @@ export const LayoutContent = styled.div`
   flex: 1 1 0%;
   max-height: calc(100% -  var(--layout-header-height));
   padding: var(--layout-padding);
-  background-color: var(--color-gray-100);
+  background-color: var(--color-secondary-200);
 `
 export const PageTitle = styled.h1`
   ${typo({size:"var(--font-size-22)", weight: 500})};
