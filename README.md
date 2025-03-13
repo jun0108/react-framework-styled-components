@@ -14,7 +14,7 @@
 - [x] Modal Popup
 - [x] Alert/Confirm Popup
 - [x] Toast Popup
-- [ ] Dropdown
+- [x] Dropdown
 - [ ] Tooltip
 - [ ] Form
 - [ ] Layout
