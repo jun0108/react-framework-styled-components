@@ -56,26 +56,24 @@ function CmMessageComponent({
 
 	return (
 		<CSSTransition in={isFade} timeout={200} classNames="fade" unmountOnExit nodeRef={overlayRef}>
-			<div ref={overlayRef}>
-				<PopupOverlay>
-					<CSSTransition in={isSlide} timeout={200} classNames="slide" unmountOnExit nodeRef={containerRef}>
-						<ConfirmContainer ref={containerRef}>
-							<PopupHeader>{popupTitle && <PopupTitle>{popupTitle}</PopupTitle>}</PopupHeader>
-							<PopupContent>{content}</PopupContent>
-							<ConfirmFooter>
-								{type === "confirm" && (
-									<button type="button" onClick={() => handleClose(false)} className="btn__line--gray-sm">
-										{cancelText}
-									</button>
-								)}
-								<button type="button" onClick={() => handleClose(true)} className="btn__full--primary-sm">
-									{confirmText}
+			<PopupOverlay ref={overlayRef}>
+				<CSSTransition in={isSlide} timeout={200} classNames="slide" unmountOnExit nodeRef={containerRef}>
+					<ConfirmContainer ref={containerRef}>
+						<PopupHeader>{popupTitle && <PopupTitle>{popupTitle}</PopupTitle>}</PopupHeader>
+						<PopupContent>{content}</PopupContent>
+						<ConfirmFooter>
+							{type === "confirm" && (
+								<button type="button" onClick={() => handleClose(false)} className="btn__line--gray-sm">
+									{cancelText}
 								</button>
-							</ConfirmFooter>
-						</ConfirmContainer>
-					</CSSTransition>
-				</PopupOverlay>
-			</div>
+							)}
+							<button type="button" onClick={() => handleClose(true)} className="btn__full--primary-sm">
+								{confirmText}
+							</button>
+						</ConfirmFooter>
+					</ConfirmContainer>
+				</CSSTransition>
+			</PopupOverlay>
 		</CSSTransition>
 	)
 }

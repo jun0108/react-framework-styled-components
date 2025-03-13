@@ -1,25 +1,6 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { typo } from '~/styles/helpers/mixins'
-export const Dropdown = () => css`
-  .dropdown-slide-enter {
-    overflow-y: hidden;
-    height: 0;
-  }
-  .dropdown-slide-enter-active {
-    height: calc-size(max-content, size);
-    opacity: 1;
-    transition: 0.2s ease-out;
-  }
-  .dropdown-slide-exit {
-    height: calc-size(max-content, size);
-    opacity: 1;
-  }
-  .dropdown-slide-exit-active {
-    overflow-y: hidden;
-    height: 0;
-    transition: 0.2s ease-out;
-  }
-`
+
 export const DropdownWrapper = styled.div<{  $labelPosition: "vertical" | "horizontal" }>`
   display: flex;
   align-items: ${({ $labelPosition }) => ($labelPosition === "vertical" ? "flex-start" : "center")};
@@ -96,6 +77,25 @@ export const OptionsList = styled.div`
   border: 1px solid var(--color-gray-500);
   border-radius: var(--radius-md);
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+
+  &.dropdown-slide-enter {
+    overflow-y: hidden;
+    height: 0;
+  }
+  &.dropdown-slide-enter-active {
+    height: calc-size(max-content, size);
+    opacity: 1;
+    transition: 0.2s ease-out;
+  }
+  &.dropdown-slide-exit {
+    height: calc-size(max-content, size);
+    opacity: 1;
+  }
+  &.dropdown-slide-exit-active {
+    overflow-y: hidden;
+    height: 0;
+    transition: 0.2s ease-out;
+  }
 `
 
 export const OptionItem = styled.div<{ selected: boolean }>`

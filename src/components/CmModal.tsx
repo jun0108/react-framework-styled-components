@@ -46,22 +46,20 @@ function CmModal({
 
 	return (
 		<CSSTransition in={isFade} timeout={200} classNames="fade" unmountOnExit nodeRef={overlayRef}>
-			<div ref={overlayRef}>
-				<PopupOverlay>
-					<CSSTransition in={isSlide} timeout={200} classNames="slide" unmountOnExit nodeRef={containerRef}>
-						<ModalContainer ref={containerRef}>
-							{useHeader && (
-								<PopupHeader>
-									{popupTitle && <PopupTitle>{popupTitle}</PopupTitle>}
-									<CloseButton onClick={onClose}>✖</CloseButton>
-								</PopupHeader>
-							)}
-							<PopupContent>{children}</PopupContent>
-							{useFooter && <ModalFooter>{popupFooter}</ModalFooter>}
-						</ModalContainer>
-					</CSSTransition>
-				</PopupOverlay>
-			</div>
+			<PopupOverlay ref={overlayRef}>
+				<CSSTransition in={isSlide} timeout={200} classNames="slide" unmountOnExit nodeRef={containerRef}>
+					<ModalContainer ref={containerRef}>
+						{useHeader && (
+							<PopupHeader>
+								{popupTitle && <PopupTitle>{popupTitle}</PopupTitle>}
+								<CloseButton onClick={onClose}>✖</CloseButton>
+							</PopupHeader>
+						)}
+						<PopupContent>{children}</PopupContent>
+						{useFooter && <ModalFooter>{popupFooter}</ModalFooter>}
+					</ModalContainer>
+				</CSSTransition>
+			</PopupOverlay>
 		</CSSTransition>
 	)
 }

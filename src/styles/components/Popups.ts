@@ -6,21 +6,6 @@ import { typo } from "~/styles/helpers/mixins"
 
 /* ========================== Styles ========================== */
 export const Popups = () => css`
-.fade-enter {
-  opacity: 0;
-}
-.fade-enter-active {
-  opacity: 1;
-  transition: opacity 0.2s ease-out;
-}
-.fade-exit {
-  opacity: 1;
-}
-.fade-exit-active {
-  opacity: 0;
-  transition: opacity 0.2s ease-out;
-}
-
 .slide-enter {
   transform: translate(-50%, calc(-50% + 20px)); 
 }
@@ -34,25 +19,6 @@ export const Popups = () => css`
 .slide-exit-active {
   transform: translate(-50%, calc(-50% + 20px));
   transition: 0.2s ease-out;
-}
-
-.toast-slide-enter {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-.toast-slide-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 300ms, transform 300ms;
-}
-.toast-slide-exit {
-  opacity: 1;
-  transform: translateY(0);
-}
-.toast-slide-exit-active {
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 300ms, transform 300ms;
 }
 `
 
@@ -68,6 +34,22 @@ export const PopupOverlay = styled.div`
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   transition: var(--transition);
+
+  &.fade-enter {
+    opacity: 0;
+  }
+  &.fade-enter-active {
+    opacity: 1;
+    transition: opacity 0.2s ease-out;
+  }
+  &.fade-exit {
+    opacity: 1;
+  }
+  &.fade-exit-active {
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+  }
+
 `
 
 export const PopupHeader = styled.div`
@@ -162,4 +144,22 @@ export const ToastMessage = styled.div<{ $type: "success" | "error" | "info" }>`
 		$type === "success" ? "var(--color-primary-700)" : $type === "error" ? "var(--color-red-900)" : "var(--color-gray-700)"
 };
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  &.toast-slide-enter {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  &.toast-slide-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  &.toast-slide-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  &.toast-slide-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 300ms, transform 300ms;
+  }
 `
