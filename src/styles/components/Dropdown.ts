@@ -76,11 +76,12 @@ export const DropdownPlaceholder = styled.span`
   color: var(--color-gray-500);
   user-select: none;
 `
-export const DropdownArrow = styled.div<{ $isOpen: boolean}>`
+export const DropdownArrow = styled.div<{ $isOpen: boolean, $disabled: boolean}>`
   transform: ${({ $isOpen }) => ($isOpen ? "rotate(180deg)" : "rotate(0)")};
   user-select: none;
   pointer-events: none;
   transition: var(--transition);
+  opacity: ${({ $disabled }) => ($disabled ? "0.5" : "1")};
 `
 
 export const OptionsList = styled.div`

@@ -81,13 +81,13 @@ const CmDropdown = ({
       
 			<DropdownInput $readonly={readonly} $disabled={disabled} $isValid={isValid} onClick={toggleDropdown}>
 				{Array.isArray(selected) && selected.length === 0
-					? placeholder
+					? <DropdownPlaceholder>{placeholder}</DropdownPlaceholder>
 					: Array.isArray(selected)
 						? selected.join(", ")
 						:  (
 							selected || <DropdownPlaceholder>{placeholder}</DropdownPlaceholder>
 						)}
-				<DropdownArrow $isOpen={isOpen}>
+				<DropdownArrow $isOpen={isOpen} $disabled={disabled || readonly}>
 					<Icon name="arrow-d__full--6b7" width="24" height="24" alt="arrow"/>
 				</DropdownArrow>
 			</DropdownInput>
