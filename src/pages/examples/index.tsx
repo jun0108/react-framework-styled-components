@@ -6,6 +6,7 @@ function Example() {
 		{ path: "button", title: 'buttons' },
 		{ path: "textfield", title: 'textfield' },
 		{ path: "popup", title: 'popups' },
+		{ path: "dropdown", title: 'dropdown' },
 	]
 	return (
 		<div>

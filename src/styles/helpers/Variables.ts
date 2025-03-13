@@ -76,7 +76,8 @@ const layoutMap = {
 	padding: "20px 30px",
 }
 /* Z-Index */
-const zindexMap = {
+const zIndexMap = {
+	dimmed: "9999",
 	header: "1000",
 }
 /* Border Radius */
@@ -150,7 +151,7 @@ export const Variables = () => css`
     ${ThemeFont(fontSizeMap)};
     ${ThemeColor(colorMap)}
     ${ThemeBreakPoint(mediaQueryMap)};
-    ${ThemeZindex(zindexMap)};
+    ${ThemeZindex(zIndexMap)};
     ${ThemeRadius(radiusMap)};
     ${ThemeFormHeight(formHeightMap)};
     ${ThemeLayout(layoutMap)};

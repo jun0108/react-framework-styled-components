@@ -1,5 +1,4 @@
-import styled from "styled-components"
-import { css } from "styled-components"
+import styled, { css } from 'styled-components'
 import { typo } from "~/styles/helpers/mixins"
 /* ========================== Variables ========================== */
 
@@ -61,7 +60,7 @@ export const PopupOverlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: var(--z-index-dimmed);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,9 +86,9 @@ export const PopupContent = styled.div`
 `
 
 export const ModalContainer = styled.div`
-position: fixed;
-top: 50%;
-left: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   display: flex;
   flex-direction: column;
   width: 600px;
@@ -111,7 +110,6 @@ export const ConfirmContainer = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
-  z-index: 1001;
   display: flex;
   flex-direction: column;
   width: 400px;

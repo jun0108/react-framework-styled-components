@@ -6,6 +6,7 @@ import {Wrapper} from "./layout/Wrapper"
 import {Popups} from "./components/Popups"
 import {Buttons} from "./components/Buttons"
 import {Chips} from "./components/Chips"
+import {Dropdown} from "./components/Dropdown"
 
 const GlobalStyles = createGlobalStyle`
 /* base */
@@ -19,6 +20,7 @@ ${Wrapper}
 ${Buttons}
 ${Popups}
 ${Chips}
+${Dropdown}
 `
 
 export { GlobalStyles } 
