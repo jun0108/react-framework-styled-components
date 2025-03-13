@@ -19,6 +19,8 @@ declare global {
   const Cmdropdown: typeof import('./src/components/Cmdropdown')['default']
   const ConfirmContainer: typeof import('./src/styles/components/Popups')['ConfirmContainer']
   const ConfirmFooter: typeof import('./src/styles/components/Popups')['ConfirmFooter']
+  const Dropdown: typeof import('./src/styles/components/Dropdown')['Dropdown']
+  const DropdownArrow: typeof import('./src/styles/components/Dropdown')['DropdownArrow']
   const DropdownContainer: typeof import('./src/styles/components/Dropdown')['DropdownContainer']
   const DropdownInput: typeof import('./src/styles/components/Dropdown')['DropdownInput']
   const DropdownPlaceholder: typeof import('./src/styles/components/Dropdown')['DropdownPlaceholder']
