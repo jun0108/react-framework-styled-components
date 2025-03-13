@@ -93,27 +93,25 @@ const CmDropdown = ({
 			</DropdownInput>
 			{isValid && <TextfieldMessage>{validMessage}</TextfieldMessage>}
       
-			{isOpen && (
-				<CSSTransition 
-					in={isOpen} 
-					timeout={300} 
-					classNames="dropdown-slide" 
-					nodeRef={optionsListRef} 
-					unmountOnExit
-				>
-					<OptionsList ref={optionsListRef}>
-						{options.map((option) => (
-							<OptionItem
-								key={option.value}
-								selected={Array.isArray(selected) ? selected.includes(option.value) : selected === option.value}
-								onClick={() => handleSelect(option.value)}
-							>
-								{option.label}
-							</OptionItem>
-						))}
-					</OptionsList>
-				</CSSTransition>
-			)}
+			<CSSTransition 
+				in={isOpen} 
+				timeout={200} 
+				classNames="dropdown-slide" 
+				unmountOnExit
+				nodeRef={optionsListRef} 
+			>
+				<OptionsList ref={optionsListRef}>
+					{options.map((option) => (
+						<OptionItem
+							key={option.value}
+							selected={Array.isArray(selected) ? selected.includes(option.value) : selected === option.value}
+							onClick={() => handleSelect(option.value)}
+						>
+							{option.label}
+						</OptionItem>
+					))}
+				</OptionsList>
+			</CSSTransition>
 		</DropdownWrapper>
 	)
 }
