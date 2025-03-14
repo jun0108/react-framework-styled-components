@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components"
-import {Reset} from "./base/Resets"
+import {Resets} from "./base/Resets"
 import {Fonts} from "./base/Fonts"
 import {Variables} from "./helpers/Variables"
 import {Wrapper} from "./layout/Wrapper"
@@ -9,7 +9,7 @@ import {Chips} from "./components/Chips"
 
 const GlobalStyles = createGlobalStyle`
 /* base */
-${Reset}
+${Resets}
 ${Fonts}
 /* variable */
 ${Variables}

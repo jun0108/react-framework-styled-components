@@ -7,6 +7,7 @@ function Example() {
 		{ path: "textfield", title: 'textfield' },
 		{ path: "popup", title: 'popups' },
 		{ path: "dropdown", title: 'dropdown' },
+		{ path: "tooltip", title: 'tooltip' },
 	]
 	return (
 		<div>

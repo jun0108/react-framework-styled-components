@@ -8,6 +8,7 @@ import Button from'~/pages/examples/Button'
 import Textfield from'~/pages/examples/Textfield'
 import Popup from'~/pages/examples/Popup'
 import Dropdown from'~/pages/examples/Dropdown'
+import Tooltip from'~/pages/examples/Tooltip'
 
 const router = createBrowserRouter([
 	{
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
 	{
 		path: '/examples/dropdown',
 		Component: Dropdown
+	},
+	{
+		path: '/examples/tooltip',
+		Component: Tooltip
 	},
 ])
 
