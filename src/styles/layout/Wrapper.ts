@@ -76,3 +76,12 @@ export const PageSubTitle = styled.h2`
   ${typo({size:"var(--font-size-18)", weight: 500, color:"var(--color-gray-800)"})};
   margin-bottom: 10px;
 `
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  padding: 12px;
+  border: 1px solid var(--color-gray-400);
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+`

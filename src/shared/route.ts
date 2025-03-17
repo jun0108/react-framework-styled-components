@@ -4,11 +4,12 @@ import Home from "~/pages/home"
 import NotFound from "~/pages/error/404"
 import Todo from '~/pages/todo/TodoList'
 import Example from'~/pages/examples/index'
-import Button from'~/pages/examples/Button'
-import Textfield from'~/pages/examples/Textfield'
-import Popup from'~/pages/examples/Popup'
-import Dropdown from'~/pages/examples/Dropdown'
-import Tooltip from'~/pages/examples/Tooltip'
+import ExampleButton from'~/pages/examples/Button'
+import ExampleTextfield from'~/pages/examples/Textfield'
+import ExamplePopup from'~/pages/examples/Popup'
+import ExampleDropdown from'~/pages/examples/Dropdown'
+import ExampleTooltip from'~/pages/examples/Tooltip'
+import ExampleForm from'~/pages/examples/Form'
 
 const router = createBrowserRouter([
 	{
@@ -29,23 +30,27 @@ const router = createBrowserRouter([
 	},
 	{
 		path: '/examples/button',
-		Component: Button
+		Component: ExampleButton
 	},
 	{
 		path: '/examples/textfield',
-		Component: Textfield
+		Component: ExampleTextfield
 	},
 	{
 		path: '/examples/popup',
-		Component: Popup
+		Component: ExamplePopup
 	},
 	{
 		path: '/examples/dropdown',
-		Component: Dropdown
+		Component: ExampleDropdown
 	},
 	{
 		path: '/examples/tooltip',
-		Component: Tooltip
+		Component: ExampleTooltip
+	},
+	{
+		path: '/examples/form',
+		Component: ExampleForm
 	},
 ])
 

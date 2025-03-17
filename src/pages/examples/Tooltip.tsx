@@ -9,7 +9,7 @@ const ExampleItem = styled.div`
   align-items: center;
 `
 
-function Buttons() {
+function ExampleTooltip() {
 	return (
 		<div>
 			<PageTitle>Action Button</PageTitle>
@@ -47,4 +47,4 @@ function Buttons() {
 	)
 }
 
-export default Buttons
+export default ExampleTooltip

@@ -10,7 +10,7 @@ const ExampleItem = styled.div`
   align-items: center;
 `
 
-function Dropdowns() {
+function ExampleDropdown() {
 	const exampleOptions = useState([
 		{ label: "Option 1", value: "Value 1" },
 		{ label: "Option 2", value: "Value 2" }
@@ -70,4 +70,4 @@ function Dropdowns() {
 	)
 }
 
-export default Dropdowns
+export default ExampleDropdown

@@ -12,7 +12,7 @@ const ExampleItem = styled.div`
   align-items: center;
 `
 
-function Popups() {
+function ExamplePopup() {
 	const [modalOpen, setModalOpen] = useState(false)
 
 	const openConfirm = async () => {
@@ -123,4 +123,4 @@ function Popups() {
 	)
 }
 
-export default Popups
+export default ExamplePopup

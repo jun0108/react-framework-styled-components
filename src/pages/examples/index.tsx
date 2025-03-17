@@ -8,6 +8,7 @@ function Example() {
 		{ path: "popup", title: 'popups' },
 		{ path: "dropdown", title: 'dropdown' },
 		{ path: "tooltip", title: 'tooltip' },
+		{ path: "form", title: 'form' },
 	]
 	return (
 		<div>
