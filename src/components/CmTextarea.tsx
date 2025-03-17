@@ -3,7 +3,7 @@ import { TextfieldLabel, TextfieldWrapper,TextfieldMessage, TextfieldTextarea } 
 
 export interface ITextarea {
   value: string;
-  placeholder: string;
+  placeholder?: string;
   labelPosition?: "vertical" | "horizontal";
   label?: string;
   resize?: "none" | "both" | "horizontal" | "vertical";

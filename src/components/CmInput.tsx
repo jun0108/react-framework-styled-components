@@ -4,7 +4,7 @@ import { TextfieldLabel, TextfieldWrapper, TextfieldMessage, TextfieldInput } fr
 export interface IInput {
   type?: "text" | "password" | "number";
   value: string;
-  placeholder: string;
+  placeholder?: string;
   labelPosition?: "vertical" | "horizontal";
   label?: string;
 	isValid?: boolean;
