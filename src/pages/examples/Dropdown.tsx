@@ -48,6 +48,23 @@ function Dropdowns() {
 						/>
 					</ExampleItem>
 				</div>
+				<div>
+					<PageSubTitle>Dropdown with Label</PageSubTitle>
+					<ExampleItem>
+						<CmDropdown
+							label='label' 
+							options={exampleOptions}
+							onChange={(value) => console.log(value)}
+						/>
+						<CmDropdown
+							label='validate' 
+							options={exampleOptions}
+							validMessage='is error'
+							isValid 
+							onChange={(value) => console.log(value)}
+						/>
+					</ExampleItem>
+				</div>
 			</div>
 		</div>
 	)

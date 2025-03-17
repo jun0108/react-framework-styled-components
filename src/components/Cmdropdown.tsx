@@ -31,7 +31,7 @@ const CmDropdown = ({
 	validMessage,
 	disabled = false,
 	readonly = false,
-	placeholder = "Select...",
+	placeholder = "선택해주세요.",
 	onChange,
 }: DropdownProps) => {
 	const [selected, setSelected] = useState<string | string[]>(
@@ -78,7 +78,6 @@ const CmDropdown = ({
 	return (
 		<DropdownWrapper ref={dropdownRef}  $labelPosition={labelPosition}>
 			{label && <TextfieldLabel $labelPosition={labelPosition}>{label}</TextfieldLabel>}
-      
 			<DropdownInput $readonly={readonly} $disabled={disabled} $isValid={isValid} onClick={toggleDropdown}>
 				{Array.isArray(selected) && selected.length === 0
 					? <DropdownPlaceholder>{placeholder}</DropdownPlaceholder>
@@ -90,28 +89,27 @@ const CmDropdown = ({
 				<DropdownArrow $isOpen={isOpen} $disabled={disabled || readonly}>
 					<Icon name="arrow-d__full--6b7" width="24" height="24" alt="arrow"/>
 				</DropdownArrow>
+				<CSSTransition 
+					in={isOpen} 
+					timeout={200} 
+					classNames="dropdown-slide" 
+					unmountOnExit
+					nodeRef={optionsListRef} 
+				>
+					<OptionsList ref={optionsListRef}>
+						{options.map((option) => (
+							<OptionItem
+								key={option.value}
+								selected={Array.isArray(selected) ? selected.includes(option.value) : selected === option.value}
+								onClick={() => handleSelect(option.value)}
+							>
+								{option.label}
+							</OptionItem>
+						))}
+					</OptionsList>
+				</CSSTransition>
 			</DropdownInput>
 			{isValid && <TextfieldMessage>{validMessage}</TextfieldMessage>}
-      
-			<CSSTransition 
-				in={isOpen} 
-				timeout={200} 
-				classNames="dropdown-slide" 
-				unmountOnExit
-				nodeRef={optionsListRef} 
-			>
-				<OptionsList ref={optionsListRef}>
-					{options.map((option) => (
-						<OptionItem
-							key={option.value}
-							selected={Array.isArray(selected) ? selected.includes(option.value) : selected === option.value}
-							onClick={() => handleSelect(option.value)}
-						>
-							{option.label}
-						</OptionItem>
-					))}
-				</OptionsList>
-			</CSSTransition>
 		</DropdownWrapper>
 	)
 }

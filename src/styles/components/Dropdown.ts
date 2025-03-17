@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 import { typo } from '~/styles/helpers/mixins'
 
-export const DropdownWrapper = styled.div<{  $labelPosition: "vertical" | "horizontal" }>`
+export const DropdownWrapper = styled.div<{ $labelPosition: "vertical" | "horizontal" }>`
   display: flex;
   align-items: ${({ $labelPosition }) => ($labelPosition === "vertical" ? "flex-start" : "center")};
   flex-direction: ${({ $labelPosition }) => ($labelPosition === "vertical" ? "column" : "row")};
-  position: relative;
   min-width: 250px;
 `
 
@@ -13,6 +12,7 @@ export const DropdownInput = styled.div<{ $disabled: boolean, $readonly: boolean
   ${({ $isValid }) =>
 		typo({size: "var(--font-size-14)", weight: 500, color: $isValid ? "var(--color-red-900)" : "var(--color-gray-900)"})
 };
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,7 +70,7 @@ export const OptionsList = styled.div`
   position: absolute;
   top: calc(var(--form-height-md) + 2px);
   left: 0;
-  z-index: calc(var(--z-index-dimmed) - 2);
+  z-index: calc(var(--z-index-dimmed) - 3);
   width: 100%;
   max-height: 150px;
   background: var(--color-white);

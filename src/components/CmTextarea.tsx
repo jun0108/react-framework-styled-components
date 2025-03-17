@@ -14,7 +14,7 @@ export interface ITextarea {
   onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-function CmTextarea({ value, placeholder, labelPosition = "vertical", label, resize = "vertical", disabled = false, readonly = false,  isValid = false,validMessage, onChange }: ITextarea) {
+function CmTextarea({ value, placeholder = "입력해주세요.", labelPosition = "vertical", label, resize = "vertical", disabled = false, readonly = false,  isValid = false,validMessage, onChange }: ITextarea) {
 	const [inputValue, setInputValue] = useState<string>(value)
 
 	const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {

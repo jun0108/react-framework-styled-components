@@ -14,7 +14,7 @@ export interface IInput {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-function CmInput({ type = "text", value, placeholder, labelPosition = "vertical", label, disabled = false, readonly = false, isValid = false, validMessage, onChange }: IInput) {
+function CmInput({ type = "text", value, 	placeholder = "입력해주세요.", labelPosition = "vertical", label, disabled = false, readonly = false, isValid = false, validMessage, onChange }: IInput) {
 	const [inputValue, setInputValue] = useState<string>(value)
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

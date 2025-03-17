@@ -8,7 +8,7 @@ export const TooltipWrapper = styled.div`
 export const TooltipBox = styled.div<{ $position: "top" | "bottom" | "left" | "right" }>`
   ${typo({ size: "var(--font-size-14)", weight: 500, color: "var(--color-white)" })};
   position: absolute;
-  z-index: 10;
+  z-index: calc(var(--z-index-dimmed) - 2);
   background: rgba(0, 0, 0, 0.75);
   padding: 6px 10px;
   border-radius: var(--radius-md);
