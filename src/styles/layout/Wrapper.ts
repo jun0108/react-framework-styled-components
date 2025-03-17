@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { css } from "styled-components"
-import {typo} from "~/styles/helpers/mixins/index"
+import {space, typo} from "~/styles/helpers/mixins/index"
 
 export const Wrapper = () => css`
 html {
@@ -76,12 +76,22 @@ export const PageSubTitle = styled.h2`
   ${typo({size:"var(--font-size-18)", weight: 500, color:"var(--color-gray-800)"})};
   margin-bottom: 10px;
 `
-export const Form = styled.form`
+export const SearchForm = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   background-color: var(--color-white);
-  padding: 12px;
+  padding: 12px 20px;
   border: 1px solid var(--color-gray-400);
   border-radius: var(--radius-md);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+`
+export const SearchFormForm = styled.form`
+  ${space({x:'8px'})};
+  display: flex;
+  flex: 1 1 0%;
+  margin-right: 12px;
+`
+export const SearchFormButton = styled.div`
+  ${space({x:'8px'})};
+  display: flex;
 `
