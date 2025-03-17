@@ -5,17 +5,19 @@ export const DropdownWrapper = styled.div<{ $labelPosition: "vertical" | "horizo
   display: flex;
   align-items: ${({ $labelPosition }) => ($labelPosition === "vertical" ? "flex-start" : "center")};
   flex-direction: ${({ $labelPosition }) => ($labelPosition === "vertical" ? "column" : "row")};
-  min-width: 250px;
+  > div {
+    position: relative;
+  }
 `
 
 export const DropdownInput = styled.div<{ $disabled: boolean, $readonly: boolean, $isValid: boolean }>`
   ${({ $isValid }) =>
 		typo({size: "var(--font-size-14)", weight: 500, color: $isValid ? "var(--color-red-900)" : "var(--color-gray-900)"})
 };
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-width: 250px;
   width: 100%;
   height: var(--form-height-md);
   padding: 0 8px;

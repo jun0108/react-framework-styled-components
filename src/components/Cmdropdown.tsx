@@ -8,39 +8,37 @@ interface Option {
   label: string;
   value: string;
 }
-
 interface DropdownProps {
   options: Option[];
   mode?: "single" | "multiple";
+  value: string | string[]; // ✅ 부모에서 전달받는 선택된 값
   labelPosition?: "vertical" | "horizontal";
   label?: string;
   isValid?: boolean;
-	validMessage?: string;
+  validMessage?: string;
   disabled?: boolean;
   readonly?: boolean;
   placeholder?: string;
-  onChange?: (selected: string | string[]) => void;
+  onChange?: (selected: string | string[]) => void; 
 }
 
 const CmDropdown = ({
 	options,
 	mode = "single",
+	value, 
 	labelPosition = "vertical",
 	label,
-	isValid = false, 
+	isValid = false,
 	validMessage,
 	disabled = false,
 	readonly = false,
 	placeholder = "선택해주세요.",
 	onChange,
 }: DropdownProps) => {
-	const [selected, setSelected] = useState<string | string[]>(
-		mode === "multiple" ? [] : ""
-	)
 	const [isOpen, setIsOpen] = useState(false)
 	const dropdownRef = useRef<HTMLDivElement>(null)
 	const optionsListRef = useRef<HTMLDivElement>(null)
-	// 외부 클릭 감지
+
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
 			if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -58,49 +56,46 @@ const CmDropdown = ({
 		if (!disabled && !readonly) setIsOpen((prev) => !prev)
 	}
 
-	const handleSelect = (value: string) => {
+	const handleSelect = (selectedValue: string) => {
 		if (readonly) return
 
+		let newSelected: string | string[]
+
 		if (mode === "multiple") {
-			const selectedArray = selected as string[]
-			const newSelected = selectedArray.includes(value)
-				? selectedArray.filter((v) => v !== value)
-				: [...selectedArray, value]
-			setSelected(newSelected)
-			onChange?.(newSelected)
+			const selectedArray = value as string[]
+			newSelected = selectedArray.includes(selectedValue)
+				? selectedArray.filter((v) => v !== selectedValue)
+				: [...selectedArray, selectedValue]
 		} else {
-			setSelected(value)
-			onChange?.(value)
+			newSelected = selectedValue
 			setIsOpen(false)
 		}
+
+		onChange?.(newSelected) 
 	}
 
 	return (
-		<DropdownWrapper ref={dropdownRef}  $labelPosition={labelPosition}>
+		<DropdownWrapper ref={dropdownRef} $labelPosition={labelPosition}>
 			{label && <TextfieldLabel $labelPosition={labelPosition}>{label}</TextfieldLabel>}
-			<DropdownInput $readonly={readonly} $disabled={disabled} $isValid={isValid} onClick={toggleDropdown}>
-				{Array.isArray(selected) && selected.length === 0
-					? <DropdownPlaceholder>{placeholder}</DropdownPlaceholder>
-					: Array.isArray(selected)
-						? selected.join(", ")
-						:  (
-							selected || <DropdownPlaceholder>{placeholder}</DropdownPlaceholder>
-						)}
-				<DropdownArrow $isOpen={isOpen} $disabled={disabled || readonly}>
-					<Icon name="arrow-d__full--6b7" width="24" height="24" alt="arrow"/>
-				</DropdownArrow>
-				<CSSTransition 
-					in={isOpen} 
-					timeout={200} 
-					classNames="dropdown-slide" 
-					unmountOnExit
-					nodeRef={optionsListRef} 
-				>
+			<div>
+				<DropdownInput $readonly={readonly} $disabled={disabled} $isValid={isValid} onClick={toggleDropdown}>
+					{Array.isArray(value) && value.length === 0
+						? <DropdownPlaceholder>{placeholder}</DropdownPlaceholder>
+						: Array.isArray(value)
+							? value.join(", ")
+							: (value || <DropdownPlaceholder>{placeholder}</DropdownPlaceholder>)
+					}
+					<DropdownArrow $isOpen={isOpen} $disabled={disabled || readonly}>
+						<Icon name="arrow-d__full--6b7" width="24" height="24" alt="arrow"/>
+					</DropdownArrow>
+				</DropdownInput>
+
+				<CSSTransition in={isOpen} timeout={200} classNames="dropdown-slide" unmountOnExit nodeRef={optionsListRef}>
 					<OptionsList ref={optionsListRef}>
 						{options.map((option) => (
 							<OptionItem
 								key={option.value}
-								selected={Array.isArray(selected) ? selected.includes(option.value) : selected === option.value}
+								selected={Array.isArray(value) ? value.includes(option.value) : value === option.value}
 								onClick={() => handleSelect(option.value)}
 							>
 								{option.label}
@@ -108,7 +103,7 @@ const CmDropdown = ({
 						))}
 					</OptionsList>
 				</CSSTransition>
-			</DropdownInput>
+			</div>
 			{isValid && <TextfieldMessage>{validMessage}</TextfieldMessage>}
 		</DropdownWrapper>
 	)
