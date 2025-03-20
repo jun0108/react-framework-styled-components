@@ -9,6 +9,7 @@ interface Option {
   value: string;
 }
 interface DropdownProps {
+	style?: React.CSSProperties;
   options: Option[];
   mode?: "single" | "multiple";
   value: string | string[]; // ✅ 부모에서 전달받는 선택된 값
@@ -23,6 +24,7 @@ interface DropdownProps {
 }
 
 const CmDropdown = ({
+	style,
 	options,
 	mode = "single",
 	value, 
@@ -78,7 +80,7 @@ const CmDropdown = ({
 		<DropdownWrapper ref={dropdownRef} $labelPosition={labelPosition}>
 			{label && <TextfieldLabel $labelPosition={labelPosition}>{label}</TextfieldLabel>}
 			<div>
-				<DropdownInput $readonly={readonly} $disabled={disabled} $isValid={isValid} onClick={toggleDropdown}>
+				<DropdownInput style={style} $readonly={readonly} $disabled={disabled} $isValid={isValid} onClick={toggleDropdown}>
 					{Array.isArray(value) && value.length === 0
 						? <DropdownPlaceholder>{placeholder}</DropdownPlaceholder>
 						: Array.isArray(value)
