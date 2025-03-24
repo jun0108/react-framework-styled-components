@@ -4,21 +4,22 @@ import { TextfieldLabel, TextfieldMessage } from "~/styles/components/Textfield"
 import { CSSTransition } from "react-transition-group"
 import Icon from "./Icon"
 
-interface Option {
+interface IDropdownOption {
   label: string;
   value: string;
 }
-interface DropdownProps {
+interface IDropdown {
 	style?: React.CSSProperties;
-  options: Option[];
+  options: IDropdownOption[];
   mode?: "single" | "multiple";
-  value: string | string[]; // ✅ 부모에서 전달받는 선택된 값
+  value: string | string[]; 
   labelPosition?: "vertical" | "horizontal";
   label?: string;
   isValid?: boolean;
   validMessage?: string;
   disabled?: boolean;
   readonly?: boolean;
+  required?: boolean;
   placeholder?: string;
   onChange?: (selected: string | string[]) => void; 
 }
@@ -34,9 +35,10 @@ const CmDropdown = ({
 	validMessage,
 	disabled = false,
 	readonly = false,
+	required = false,
 	placeholder = "선택해주세요.",
 	onChange,
-}: DropdownProps) => {
+}: IDropdown) => {
 	const [isOpen, setIsOpen] = useState(false)
 	const dropdownRef = useRef<HTMLDivElement>(null)
 	const optionsListRef = useRef<HTMLDivElement>(null)
@@ -78,7 +80,7 @@ const CmDropdown = ({
 
 	return (
 		<DropdownWrapper ref={dropdownRef} $labelPosition={labelPosition}>
-			{label && <TextfieldLabel $labelPosition={labelPosition}>{label}</TextfieldLabel>}
+			{label && <TextfieldLabel $required={required} $labelPosition={labelPosition}><span>{label}</span></TextfieldLabel>}
 			<div>
 				<DropdownInput style={style} $readonly={readonly} $disabled={disabled} $isValid={isValid} onClick={toggleDropdown}>
 					{Array.isArray(value) && value.length === 0

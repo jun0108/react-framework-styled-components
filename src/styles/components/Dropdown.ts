@@ -7,6 +7,9 @@ export const DropdownWrapper = styled.div<{ $labelPosition: "vertical" | "horizo
   flex-direction: ${({ $labelPosition }) => ($labelPosition === "vertical" ? "column" : "row")};
   > div {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    height: var(--form-height-md);
   }
 `
 
@@ -17,8 +20,8 @@ export const DropdownInput = styled.div<{ $disabled: boolean, $readonly: boolean
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 250px;
-  width: 100%;
+  flex: 1 1 0%;
+  min-width: 150px;
   height: var(--form-height-md);
   padding: 0 8px;
   background: var(--color-white);

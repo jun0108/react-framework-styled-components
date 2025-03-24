@@ -6,15 +6,37 @@ import { typo } from '~/styles/helpers/mixins'
 /* ========================== Mixins ========================== */
 
 /* ========================== Styles ========================== */
-export const TextfieldLabel = styled.label<{ $labelPosition: "vertical" | "horizontal" }>`
+export const TextfieldLabel = styled.label<{ $required: boolean, $labelPosition: "vertical" | "horizontal" }>`
   ${typo({ size: "var(--font-size-16)", weight: 500, color: "var(--color-gray-800)"})};
-  margin: ${({ $labelPosition }) => ($labelPosition === "vertical" ? "0 0 4px 0" : "0 8px 0 0")};
+  margin: ${({ $labelPosition }) => ($labelPosition === "vertical" ? "0 0 4px 0" : "0 10px 0 0")};
+  width: ${({ $labelPosition }) => ($labelPosition === "vertical" ? "auto" : "90px")};
+  span {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      right: -8px;
+      display: ${({ $required }) => ($required ? "inline-block" : "none")};
+      width: 4px;
+      height: 4px;
+      background-color: var(--color-red-900);
+      border-radius: var(--radius-full);
+    }
+  }
 `
 
 export const TextfieldWrapper = styled.div<{ $labelPosition: "vertical" | "horizontal" }>`
   display: flex;
   align-items: ${({ $labelPosition }) => ($labelPosition === "vertical" ? "flex-start" : "center")};
   flex-direction: ${({ $labelPosition }) => ($labelPosition === "vertical" ? "column" : "row")};
+  width: 100%;
+  > div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1 1 0%;
+  }
 `
 
 export const TextfieldMessage = styled.p`
@@ -25,6 +47,7 @@ export const TextfieldInput = styled.input<{ $isValid: boolean }>`
   ${({ $isValid }) =>
 		typo({size: "var(--font-size-14)", weight: 500, color: $isValid ? "var(--color-red-900)" : "var(--color-gray-900)"})
 };
+width: fit-content;
   min-width: 250px;
   height: var(--form-height-md);
   padding: 0 8px;
@@ -57,6 +80,7 @@ export const TextfieldTextarea = styled.textarea<{ $isValid: boolean, $resize: "
   ${({ $isValid }) =>
 		typo({size: "var(--font-size-14)", weight: 500, color: $isValid ? "var(--color-red-900)" : "var(--color-gray-900)"})
 };
+width: fit-content;
   display: flex;
   min-width: 250px;
   min-height: 150px;

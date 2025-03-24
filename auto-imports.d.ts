@@ -27,6 +27,7 @@ declare global {
   const DropdownPlaceholder: typeof import('./src/styles/components/Dropdown')['DropdownPlaceholder']
   const DropdownWrapper: typeof import('./src/styles/components/Dropdown')['DropdownWrapper']
   const Form: typeof import('./src/styles/layout/Wrapper')['Form']
+  const FormItem: typeof import('./src/styles/layout/Wrapper')['FormItem']
   const Header: typeof import('./src/styles/layout/Header')['Header']
   const HeaderItem: typeof import('./src/styles/layout/Header')['HeaderItem']
   const HeaderList: typeof import('./src/styles/layout/Header')['HeaderList']

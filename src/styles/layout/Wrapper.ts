@@ -80,7 +80,7 @@ export const SearchForm = styled.div`
   display: flex;
   flex-wrap: wrap;
   background-color: var(--color-white);
-  padding: 12px 20px;
+  padding: 0 20px 12px 20px;
   border: 1px solid var(--color-gray-400);
   border-radius: var(--radius-md);
   margin-bottom: 20px;
@@ -89,9 +89,34 @@ export const SearchFormForm = styled.form`
   ${space({x:'8px'})};
   display: flex;
   flex: 1 1 0%;
-  margin-right: 12px;
+  margin: 12px 12px 0 0;
 `
 export const SearchFormButton = styled.div`
   ${space({x:'8px'})};
   display: flex;
+  margin-top: 12px;
+`
+export const Form = styled.form`
+  ${space({y:'6px'})};
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  padding: 12px 20px;
+  border: 1px solid var(--color-gray-400);
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+`
+export const FormItem = styled.div`
+  ${space({x:'8px'})};
+  display: flex;
+  padding: 8px 0;
+  border-top: 1px solid var(--color-gray-400);
+  &:first-child {
+    border-top: 0;
+  }
+`
+export const FormButton = styled.div`
+  ${space({x:'8px'})};
+  display: flex;
+  justify-content: flex-end;
 `

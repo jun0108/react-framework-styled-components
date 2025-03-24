@@ -22,7 +22,9 @@ const btnColor = {
 }
 /* ========================== Mixins ========================== */
 const btnBase = (size: keyof typeof btnSize) => css`
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: max-content;
   min-width: ${btnSize[size].minWidth};
   height: ${btnSize[size].height};
@@ -30,6 +32,9 @@ const btnBase = (size: keyof typeof btnSize) => css`
   border-radius: calc(${btnSize[size].height} / 2);
   cursor: pointer;
   transition: var(--transition);
+  img {
+    margin-right: 3px;
+  }
 `
 const btnVariable = (type: "solid" | "line", color: keyof typeof btnColor.solid) => css`
   ${typo({ size: "var(--font-size-14)", weight: 500,  color: btnColor[type][color].text })};
