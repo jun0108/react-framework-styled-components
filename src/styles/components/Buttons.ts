@@ -38,18 +38,18 @@ const btnBase = (size: keyof typeof btnSize) => css`
 `
 const btnVariable = (type: "solid" | "line", color: keyof typeof btnColor.solid) => css`
   ${typo({ size: "var(--font-size-14)", weight: 500,  color: btnColor[type][color].text })};
-  background-color: ${type === "solid" ? btnColor[type][color].default : "transparent"};
+  background-color: ${type === "solid" ? btnColor[type][color].default : "var(--color-white)"};
   border: 1px solid ${btnColor[type][color].default};
 
   &:hover:not(:disabled) {
     color: ${type === "line" ? btnColor[type][color].hover : null};
-    background-color: ${type === "solid" ? btnColor[type][color].hover : "transparent"};
+    background-color: ${type === "solid" ? btnColor[type][color].hover : "var(--color-gray-400)"};
     border-color: ${btnColor[type][color].hover};
   }
 
   &:disabled {
     color: ${type === "line" ? btnColor[type][color].disabled : null};
-    background-color: ${type === "solid" ? btnColor[type][color].disabled : "transparent"};
+    background-color: ${type === "solid" ? btnColor[type][color].disabled : "var(--color-gray-400)"};
     border-color: ${btnColor[type][color].disabled};
   }
 `

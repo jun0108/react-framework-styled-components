@@ -34,7 +34,7 @@ export const TextfieldWrapper = styled.div<{ $labelPosition: "vertical" | "horiz
   > div {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: fit-content;
     flex: 1 1 0%;
   }
 `

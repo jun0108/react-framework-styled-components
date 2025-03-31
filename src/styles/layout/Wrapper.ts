@@ -34,7 +34,6 @@ body,
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
 }
-
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
