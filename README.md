@@ -16,8 +16,8 @@
 - [x] Toast Popup
 - [x] Dropdown
 - [x] Tooltip
-- [ ] Form
-- [ ] Layout
+- [x] Form
+- [x] Layout
 
 --- 
 
